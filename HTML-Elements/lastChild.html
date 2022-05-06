@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The lastChild Property</h2>
+
+<div><hr>
+    <button onclick="getLastDataExampleOne()">Click</button>
+    <ul id="listLastDataExampleOne"><li>Coffee</li><li>Tea</li></ul>
+    <p>The HTML content of the list's last child node is:</p>
+    <p id="getLastDataExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getLastDataExampleTwo()">Try it</button>
+    <p>Click the button to get the text of the last child node of the select element.</p>
+    <select id="selectDataExampleTwo" size="5"><option>Audi</option><option>BMW</option><option>Saab</option><option>Volvo</option></select><br><br>
+    <p id="getLastDataExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getLastDataExampleThree()">Try it</button>
+    <div id="listLastDataExampleThree">
+        <p>Second child in div</p>
+        <p>Fourth child in div</p>
+    </div>
+    <p>The node name of "myDIV"s last child node is.</p>
+    <p id="getLastDataExampleThree"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getLastDataExampleFour()">Try it</button>
+    <p>Click the button to get the node name of the DIV's last child node.</p>
+    <div id="listLastDataExampleFour"><p>A P element - First child in div</p><span>A Span element - Last child in div</span></div>
+    <p id="getLastDataExampleFour"></p>
+</div><hr>
+
+<script>
+let getLastDataExampleOne = () => {
+    let text = document.getElementById("listLastDataExampleOne").lastChild.innerHTML;
+    let data = document.getElementById("getLastDataExampleOne");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getLastDataExampleTwo = () => {
+    let text = document.getElementById("selectDataExampleTwo").lastChild.text;
+    let data = document.getElementById("getLastDataExampleTwo");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getLastDataExampleThree = () => {
+    let text = document.getElementById("listLastDataExampleThree").lastChild.nodeName;
+    let data = document.getElementById("getLastDataExampleThree");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getLastDataExampleFour = () => {
+    let text = document.getElementById("listLastDataExampleFour").lastChild.nodeName;
+    let data = document.getElementById("getLastDataExampleFour");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

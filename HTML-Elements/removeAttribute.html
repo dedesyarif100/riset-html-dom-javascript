@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.democlass {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <div id="listExampleOne">
+        <h1 class="democlass">Hello World</h1>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <div id="listExampleTwo">
+        <a id="link" href="https://www.w3schools.com">A Link: Go to w3schools.com</a>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    listExampleOne = listExampleOne.querySelector(".democlass");
+    if ( listExampleOne ) {
+        listExampleOne.removeAttribute("class");
+    }
+}
+
+let getExampleTwo = () => {
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    listExampleTwo.querySelector("#link").removeAttribute("href");
+}
+</script>
+</body>
+</html>

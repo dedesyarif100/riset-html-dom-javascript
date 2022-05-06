@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #listExampleOne {
+        border: 1px solid black;
+        background-color: #f0f0f0;
+        width: 50%;
+    }
+</style>
+<body>
+<h1>The Document Object</h1>
+<h2>The forms Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">getExampleOne</button>
+    <div class="getExampleOne">
+        <form id="listExampleOne">
+            <p>First Name: <input type="text" name="fname" value="Donald"></p>
+            <p>Last Name: <input type="text" name="lname" value="Duck"></p>
+            <p>City: <input type="text" name="fname" value="Duckburg"></p>
+            <input type="submit" value="Submit">
+        </form>
+        <p>The number of form elements in the document is:</p>
+        DEMO : 
+        <div>
+            <span class="demo"></span>
+        </div><br>
+        GETID : 
+        <div>
+            <span class="getId"></span>
+        </div><br>
+        GET ITEM : 
+        <div>
+            <span class="getItem"></span>
+        </div><br>
+        GET ALL ID : 
+        <div>
+            <span class="getAllId"></span>
+        </div><br>
+        GET ELEMENT : 
+        <div>
+            <span class="getElements"></span>
+        </div><br>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // let num = document.forms.length;
+    // getExampleOne.querySelector(".demo").innerHTML = num;
+
+    // DEMO
+    console.log(document.forms);
+    // console.log(document.forms.namedItem("listExampleOne").elements.namedItem("lname"));
+    // console.log(document.forms[0]);
+
+    let getExampleOne = document.querySelector(".getExampleOne");
+    const form = document.forms.listExampleOne;
+    let getElements = "";
+    for (let i = 0; i < form.length; i++) {
+        getElements += form.elements[i].value + "<br>";    
+    }
+    let demo = getExampleOne.querySelector(".demo");
+    demo.innerHTML = getElements;
+    demo.style.backgroundColor = "yellow";
+
+    // GET ID
+    let id = document.forms[0].id;
+    let getId = getExampleOne.querySelector(".getId");
+    getId.innerHTML = id;
+    getId.style.backgroundColor = "yellow";
+
+    // GET ITEM
+    let html = document.forms.namedItem("listExampleOne").innerHTML;
+    let getItem = getExampleOne.querySelector(".getItem");
+    getItem.innerHTML = html;
+    getItem.style.backgroundColor = "yellow";
+
+    // GET ALL ID
+    const forms = document.forms;
+    let text = "";
+    for (let i = 0; i < forms.length; i++) {
+        text += forms[i].id + "<br>";
+    }
+    let getAllId = getExampleOne.querySelector(".getAllId");
+    getAllId.innerHTML = text;
+    getAllId.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+#listExampleOne {
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+    margin: 15px;
+    border-top: 15px solid black;
+    border-left: 10px solid red;
+    background-color: lightblue;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The clientTop and clientLeft Properties</h2>
+
+<div><hr>
+    <p>Display the width of myDIV's top and left border:</p>
+	<button onclick="getExampleOne()">Try it</button>
+    <div id="listExampleOne">
+        <p id="getExampleOne"></p>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.getElementById("listExampleOne");
+    let text = "clientTop: " + element.clientTop + "px<br>";
+    text += "clientLeft: " + element.clientLeft + "px";
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

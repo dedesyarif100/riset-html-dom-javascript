@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the buttons to compare the <strong>first item</strong> in two of the lists.</p>
+
+<div><hr>
+    <button onclick="getExampleOne('listOne', 'listTwo')">Compare List 1 and 2</button>
+    <button onclick="getExampleOne('listOne', 'listThree')">Compare List 1 and 3</button>
+    <br><br>
+    List 1:
+    <ul id="listOne"><li>Water</li><li>Milk</li></ul>
+    List 2:
+    <ul id="listTwo"><li>Coffee</li><li>Tea</li></ul>
+    List 3:
+    <ul id="listThree"><li>Water</li><li>Fire</li></ul>
+    <p><strong>Note:</strong> Internet Explorer 8 and earlier does not support the isEqualNode method.</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = (dataOne, dataTwo) => {
+    var item1 = document.getElementById(dataOne).firstChild;
+    var item2 = document.getElementById(dataTwo).firstChild;
+    var result = item1.isEqualNode(item2);
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = result;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

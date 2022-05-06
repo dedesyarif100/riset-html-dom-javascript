@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The lastModified Property</h2>
+
+<div><hr>
+    <p>This document was last modified:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>This document was last modified:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let text = document.lastModified;
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const date = new Date(document.lastModified);
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = date;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

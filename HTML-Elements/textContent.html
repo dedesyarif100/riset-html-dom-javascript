@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The textContent Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <span id="listExampleOne">DATA 1</span>
+    <p>The text content of the button is:</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p id="getExampleTwo" onclick="getExampleTwo()">Click me to change my textual content.</p>
+</div><hr>
+
+<div><hr>
+    <ul id="listExampleThree">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p>The text content of the ul element is:</p>
+    <button onclick="getExampleThree()">Click</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let text = document.getElementById("listExampleOne").textContent;
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let element = document.getElementById("getExampleTwo");
+element.style.backgroundColor = "yellow";
+let getExampleTwo = () => {
+    element.textContent = "I have changed!";
+}
+
+let getExampleThree = () => {
+    let text = document.getElementById("listExampleThree").textContent;
+    let data = document.getElementById("getExampleThree");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

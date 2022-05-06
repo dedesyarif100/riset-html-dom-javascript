@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#listExampleOne {
+    border: 1px solid black;
+}
+
+a[target] {
+    background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p>Click the button to change the text of the first element with class="example" in div.</p>
+    <div id="listExampleOne">
+        <h2 class="example">A heading with class="example" in div</h2>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <p>Click the button to change the text of the first p element in div.</p>
+    <div id="listExampleTwo">
+        <p>This is a p element in div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Try it</button>
+    <p>Click the button to change the text of the first p element with class="example" in div.</p>
+    <div id="listExampleThree">
+        <h2 class="example">A heading with class="example" in div</h2>
+        <p class="example">A paragraph with class="example" in div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Try it</button>
+    <p>Click the button to change the text of the p element in div.</p>
+    <div id="listExampleFour">
+        <p id="demo">This is a p element with id="demo" in a div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFive()">Try it</button>
+    <p>Click the button to add a red border to the first link that has a target attribute inside the div element.</p>
+    <p>The CSS selector a[target] makes sure that all links with a target attribute gets a yellow background:</p>
+    <div id="listExampleFive">
+        Three links inside div:
+        <a href="https://www.w3schools.com">w3schools.com</a>
+        <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+    </div>
+</div><hr>
+
+<script>
+// Change the text of the first child element with class="example" in a <div> element:
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    let val = listExampleOne.querySelector(".example");
+    val.innerHTML = "Hello World!";
+    val.style.backgroundColor = "yellow";
+}
+
+// Change the text of the first <p> element in a <div> element:
+let getExampleTwo = () => {
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    let val = listExampleTwo.querySelector("p");
+    val.innerHTML = "Hello World!";
+    val.style.backgroundColor = "yellow";
+}
+
+// Change the text of the first <p> element with class="example" in a <div> element:
+let getExampleThree = () => {
+    let listExampleThree = document.querySelector("#listExampleThree");
+    let val = listExampleThree.querySelector("h2.example");
+    val.innerHTML = "Hello World!";
+    val.style.backgroundColor = "yellow";
+}
+
+// Change the text of an element with id="demo" in a <div> element:
+let getExampleFour = () => {
+    let listExampleFour = document.querySelector("#listExampleFour");
+    let val = listExampleFour.querySelector("#demo");
+    val.innerHTML = "Hello World!";
+    val.style.backgroundColor = "yellow";
+}
+
+// Add a red border to the first <a> element that has a target attribute inside a <div> element:
+let getExampleFive = () => {
+    let listExampleFive = document.querySelector("#listExampleFive");
+    let val = listExampleFive.querySelector("a[target]");
+    val.style.border = "2px solid red";
+}
+</script>
+</body>
+</html> 

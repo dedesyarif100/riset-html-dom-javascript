@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The write() Method</h2>
+
+<div><hr>
+    <p>Using document.write() after a document is loaded, deletes all existing HTML:</p>
+    <button type="button" onclick="myFunction()">Click me!</button>
+    <button onclick="documentOpen()">Document</button>
+</div><hr>
+
+<script>
+function myFunction() {
+    document.write("DEDE");
+}
+
+let documentOpen = function() {
+    document.open();
+    document.write("<h1>Hello World</h1>");
+    document.close();
+}
+document.write("<h2>Hello World!</h2><p>Have a nice day!</p>");
+</script>
+</body>
+</html> 

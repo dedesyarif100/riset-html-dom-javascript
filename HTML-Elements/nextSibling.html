@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The nextSibling Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <ul><li id="item1">Coffee (first item)</li><li id="item2">Tea (second item)</li></ul>
+    <p>The HTML content of the next sibling of the first list item is:</p>
+    <p id="getExampleOne"></p>
+    <p><strong>Note:</strong> Whitespace between elements is considered text nodes.</p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let text = document.querySelector("#item1").nextSibling;
+    console.log(text);
+    let data = document.querySelector("#getExampleOne");
+    data.style.backgroundColor = "yellow";
+    if (text !== null) {
+        text = text.innerHTML;
+        data.innerHTML = text;
+    } else {
+        data.innerHTML = "DATA NULL";        
+    }
+}
+</script>
+</body>
+</html>

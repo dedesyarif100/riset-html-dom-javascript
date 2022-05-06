@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<h1>The Element Object</h1>
+<h2>The getBoundingClientRect() Method</h2>
+<body>
+
+<div><hr>
+    <div onscroll="getExampleOne()" style="height:200px; width:300px; overflow:auto;">
+        <div id="listExampleOne" style="width:250px; height:150px; padding:16px; border:1px solid black;">
+            Scroll to display the bounding client rect of the element with the border.
+        </div>
+        <div style="width:1000px; height:1000px;"></div>
+    </div>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.getElementById("listExampleOne");
+    const rect = element.getBoundingClientRect();
+    console.log(rect);
+
+    document.getElementById("getExampleOne").innerHTML =
+    "Left: " + rect.left.toFixed() + ", Top: " + rect.top.toFixed() + ", Width: " + rect.width + ", Height: " + rect.height;
+}
+</script>
+</body>
+</html>

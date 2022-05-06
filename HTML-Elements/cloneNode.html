@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The cloneNode() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Copy</button>
+    <p>Click "Copy" to copy an item from one list to another.</p>
+    <ul id="listExampleOneSectionOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <ul id="listExampleOneSectionTwo"><li>Water</li><li>Milk</li></ul>
+    <p>If you change the <b>deep</b> parameter to false, only an empty LI element will be cloned.</p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">CopyElementDiv</button>
+    <p>Click "Copy" to copy the "demo" element, including all its attributes and child elements, and append it to the document.</p>
+    <div id="getExampleTwo" style="border:1px solid black;background-color:pink">
+        <p style="color:red;">A p element</p>
+        <p style="color:green;">A p element</p>
+        <p style="color:blue;">A p element</p>
+    </div>
+</div><hr>
+
+<script>
+// Copy a <li> element from "myList2" to "myList1":
+let getExampleOne = () => {
+    const node = document.getElementById("listExampleOneSectionTwo").lastChild;
+    const clone = node.cloneNode(true);
+    let listExampleOneSectionOne = document.getElementById("listExampleOneSectionOne");
+    listExampleOneSectionOne.appendChild(clone);
+    listExampleOneSectionOne.style.backgroundColor = "yellow";
+}
+
+// Copy the "demo" element, including attributes and child elements, and append it to the document:
+let getExampleTwo = () => {
+    const node = document.querySelector("#getExampleTwo");
+    const clone = node.cloneNode(true);
+    document.body.appendChild(clone);
+}
+</script>
+</body>
+</html>

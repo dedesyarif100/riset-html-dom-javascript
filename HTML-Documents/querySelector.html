@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            /* border: 1px solid black; */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>The Document Object</h1>
+<h2>The querySelector() Method</h2>
+
+<div><hr>
+    <p>This is a p element.</p>
+    <p>This is a p element.</p>
+    <button onclick="getExampleOne()">Click</button>
+</div><hr>
+
+<div><hr>
+    <p class="example">I am a paragraph.</p>
+    <button onclick="getExampleTwo()">Click</button>
+</div><hr>
+
+<div><hr>
+    <p id="demo">This is a p element with id="demo".</p>
+    <button onclick="getExampleThree()">Click</button>
+</div><hr>
+
+<div><hr>
+  	<h3>H3 element</h3>
+  	<p>I am a p element, my parent is a div element.</p>
+    <button onclick="getExampleFour()">Click</button>
+</div><hr>
+
+<div><hr>
+    <div>
+        <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+    </div>
+    <div>
+        <a href="http://www.disney.com" target="_blank" class="links">disney.com</a>
+    </div>
+    <div>
+        <a href="https://www.w3schools.com" id="link">w3schools.com</a>
+    </div>
+    <button onclick="getExampleFive()">Click</button>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // Get the first <p> element:
+    document.querySelector("p").style.backgroundColor = "red";
+}
+
+let getExampleTwo = () => {
+    // Get the first element with class="example":
+    // document.querySelector(".example").style.backgroundColor = "red";
+
+    // Get the first <p> element in with class="example":
+    document.querySelector("p.example").style.backgroundColor = "red";
+}
+
+let getExampleThree = () => {
+    // Change the text of the element with id="demo":
+    document.querySelector("#demo").innerHTML = "HELLO WORLD";
+}
+
+let getExampleFour = () => {
+    // Select the first <p> element with the parent is a <div> element.
+    document.querySelector("div > h3").style.backgroundColor = "red";
+}
+
+let getExampleFive = () => {
+    // Select the first <a> element that has a "target" attribute:
+    document.querySelector("a[target]").style.border = "2px solid red";
+    document.querySelector("a.links").style.border = "2px solid blue";
+    document.querySelector("a#link").style.border = "2px solid green";
+}
+</script>
+</body>
+</html>

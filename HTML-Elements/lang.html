@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The lang Property</h2>
+
+<div><hr>
+    <p id="enLanguage" lang="en">The language code of this paragraph is:</p>
+    <button onclick="getEnglishLanguage()">Click</button>
+    <p id="getEnglishLanguage"></p>
+</div><hr>
+
+<div><hr>
+    <p id="idLanguage" lang="id">Indonesia:</p>
+    <button onclick="getIndonesianLanguage()">Click</button>
+    <p id="getIndonesianLanguage"></p>
+</div><hr>
+
+<script>
+let getEnglishLanguage = () => {
+    let text = document.querySelector("#enLanguage").lang;
+    let getEnglishLanguage = document.querySelector("#getEnglishLanguage");
+    getEnglishLanguage.innerHTML = text;
+    getEnglishLanguage.style.backgroundColor = "yellow";
+}
+
+let getIndonesianLanguage = () => {
+    let text = document.querySelector("#idLanguage").lang;
+    let getIndonesianLanguage = document.querySelector("#getIndonesianLanguage");
+    getIndonesianLanguage.innerHTML = text;
+    getIndonesianLanguage.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

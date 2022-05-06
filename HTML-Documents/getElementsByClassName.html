@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The getElementsByClassName() Method</h2>
+<p>Change the text of the first element with class="example":</p>
+
+<div><hr>
+	<div class="example">Element1</div>
+	<div class="example">Element2</div>
+	<div class="example">Element2</div>
+	<div class="example color">Element2</div>
+	<div class="example color">Element2</div>
+	<p>The number of elements with class="example" is:</p>
+    <button onclick="getExampleOne()">Click</button>
+	<p id="demo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+	// Change the text of the first element with class="example"
+	const collection = document.getElementsByClassName("example");
+	collection[0].innerHTML = "Hello World!";
+	collection[1].innerHTML = "This is edit!";
+	collection[2].innerHTML = "Help me!";
+	collection[3].innerHTML = "Thankyou!";
+	collection[4].innerHTML = "Where are you!";
+	
+	// The number of elements with class="example" is
+	let numb = document.getElementsByClassName("example").length;
+	document.getElementById("demo").innerHTML = numb;
+	
+	const collectionColorDynamic = document.getElementsByClassName("example");
+	for (let i = 0; i < collectionColorDynamic.length; i++) {
+		collectionColorDynamic[i].style.backgroundColor = "red";
+	}
+
+	// Change the background color of all elements with class="example":
+	const collectionColor = document.getElementsByClassName("color");
+	for (let i = 0; i < collectionColor.length; i++) {
+		collectionColor[i].style.backgroundColor = "yellow";
+	}
+}
+</script>
+</body>
+</html>

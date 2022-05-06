@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {
+    color: red;
+}
+</style>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Remove</button>
+    <p>Click "Remove" to remove the class attribute node from the first h1 element.</p>
+    <div id="listExampleOne">
+        <h1 class="democlass">The Element Object</h1>
+    </div>
+    <h2>The removeAttributeNode() Method</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Remove</button>
+    <div id="listExampleTwo">
+        <a id="link" href="https://www.w3schools.com" target="_blank">A Link: Go to w3schools.com</a>
+    </div>
+</div><hr>
+
+<script>
+// Remove the class attribute node from the first <h1> element:
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    listExampleOne = listExampleOne.querySelector(".democlass");
+    if (listExampleOne) {
+        const attr = listExampleOne.getAttributeNode("class");
+        listExampleOne.removeAttributeNode(attr);
+    }
+}
+
+// Remove the href attribute node from a link:
+let getExampleTwo = () => {
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    listExampleTwo = document.querySelector("#link");
+    const attr = listExampleTwo.getAttributeNode("href");
+    if (attr) {
+        listExampleTwo.removeAttributeNode(attr);
+    }
+}
+</script>
+</body>
+</html>

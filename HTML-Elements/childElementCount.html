@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The childElementCount Property</h2>
+
+<div><hr>
+    <div id="listExampleOne">
+        <p>First p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+    </div>
+    <button onclick="getExampleOne()">Append</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleTwo">
+        <p>First p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+        <p>Second p element</p>
+    </div>
+    <button onclick="getExampleTwo()">Append</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // Number of child elements of a <div> element:
+    let listExampleOne = document.querySelector("#listExampleOne");
+    let numb = listExampleOne.childElementCount;
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = numb;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    // childElementCount returns the same as children.length:
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    let childrenLength = listExampleTwo.children.length;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = childrenLength;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

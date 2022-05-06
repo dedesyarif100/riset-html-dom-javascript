@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The hasAttribute() Method</h2>
+
+<div><hr>
+    <button id="listExampleOne" onclick="getExampleOne()">BUTTON</button>
+    <p>Does the button have an onclick attribute:</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Change</button>
+    <a id="listExampleTwo" href="https://www.w3schools.com" target="_blank">W3schools</a>.
+    <p>Click "Change" to change the link target to "_self_".</p>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+// Does "myButton" have an onclick attribute:
+let getExampleOne = () => {
+    const myButton = document.querySelector("#listExampleOne");
+    let answer = myButton.hasAttribute("onclick");
+    let demo = document.querySelector("#getExampleOne");
+    demo.innerHTML = answer;
+    demo.style.backgroundColor = "yellow";
+}
+
+// If an <a> element has a target attribute, change the value to "_self":
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    if (element.hasAttribute("target")) {
+        element.setAttribute("target", "_self");
+        let getExampleTwo = document.querySelector("#getExampleTwo");
+        getExampleTwo.innerHTML = "hasbeen changed";
+        getExampleTwo.style.backgroundColor = "yellow";
+    }
+}
+</script>
+</body>
+</html>

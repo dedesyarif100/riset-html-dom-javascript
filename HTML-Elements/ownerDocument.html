@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p id="listExampleOne">Click the button get the node type of the owner document of this &lt;p&gt; element.</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let val = document.querySelector("#listExampleOne").ownerDocument.nodeType;
+    let data = document.querySelector("#getExampleOne");
+    data.innerHTML = val;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

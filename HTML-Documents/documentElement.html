@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The documentElement Property</h2>
+
+<div><hr>
+    <p>The element node is:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    console.log(document.documentElement);
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = document.documentElement.nodeName;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The title Property</h2>
+
+<div><hr>
+    <p><abbr id="listExampleOne" title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+    <p>The title of the abbr element is:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>Hover over the 'w3schools.com' header (to see the title), before and after you click "Change".</p>
+    <h2 id="getExampleTwo" title="Free Web tutorials">w3schools.com</h2>
+    <button onclick="getExampleTwo()">Change</button>
+    <p id="getTitle"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.getElementById("listExampleOne");
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = element.title;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const element = document.getElementById("getExampleTwo");
+    element.title += " The World's Largest Web Development Site";
+    let getTitle = document.getElementById("getTitle");
+    getTitle.innerHTML = element.title;
+    getTitle.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

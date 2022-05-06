@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The appendChild() Method</h2>
+
+<div><hr>
+    <p>Click "Append" to append an item to the end of the list:</p>
+    <button onclick="getExampleOne()">Append</button>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <p>Click "Move" to move an item from one list to another:</p>
+    <button onclick="getExampleTwo()">Move</button>
+    <ul id="dataOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <ul id="dataTwo">
+        <li>Water</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <p>Click "Append" create a paragraph and append it to myDIV:</p>
+    <button onclick="getExampleThree()">createDataIntoDiv</button>
+    <div id="listExampleThree">
+        <h2>I am myDIV</h2>
+    </div>
+</div><hr>
+
+<div><hr>
+    <p>Click "Append" to create a p element and append it to the document's body:</p>
+    <button onclick="getExampleFour()">createDataIntoBody</button>
+</div><hr>
+
+<script>
+// Click "Append" to append an item to the end of the list
+let getExampleOne = () => {
+    const node = document.createElement("li");
+    const textnode = document.createTextNode("Water");
+    node.appendChild(textnode);
+    let listExampleOne = document.querySelector("#listExampleOne");
+    listExampleOne.appendChild(node);
+    listExampleOne.style.backgroundColor = "yellow";
+}
+
+// Click "Move" to move an item from one list to another
+let getExampleTwo = () => {
+    const node = document.getElementById("dataTwo").lastElementChild;
+    document.getElementById("dataOne").appendChild(node);
+}
+
+// Click "Append" create a paragraph and append it to myDIV
+let getExampleThree = function() {
+    const elementP = document.createElement("p");
+    const node = document.createTextNode("This is a paragraph");
+    elementP.appendChild(node);
+    let listExampleThree = document.getElementById("listExampleThree");
+    listExampleThree.appendChild(elementP);
+    listExampleThree.style.backgroundColor = "yellow";
+}
+
+// Click "Append" to create a p element and append it to the document's body
+let getExampleFour = () => {
+    const elementP = document.createElement("p");
+    const node = document.createTextNode("This is a paragraph");
+    elementP.appendChild(node);
+    elementP.style.backgroundColor = "yellow";
+    document.body.appendChild(elementP);
+}
+</script>
+</body>
+</html>

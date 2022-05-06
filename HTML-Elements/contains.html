@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The contains() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div id="listExampleOne">
+        <p>I am a p element inside "myDIV", and I have a <span id="mySPAN"><b>span</b></span> element inside of me.</p>
+    </div>
+    <p>Does the div element contain a span element?</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const span = document.getElementById("mySPAN");
+    let answer = document.getElementById("listExampleOne").contains(span);
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = answer;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

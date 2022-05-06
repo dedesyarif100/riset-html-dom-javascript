@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The entries() Method</h2>
+<p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+<div><hr>
+    <p>The body element's child nodes entries are:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes entries are:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes entries are:</p>
+    <button onclick="getExampleThree()">Click</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes KEY are:</p>
+    <button onclick="getExampleFour()">Click</button>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes VALUES are:</p>
+    <button onclick="getExampleFive()">Click</button>
+    <p id="getExampleFive"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for(let x of list.entries()) {
+      text += x[0] + " " + x[1] + "<br>";
+    }
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = text
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for(let x of list.entries()) {
+      text += x[0] + " " + x[1].nodeName + "<br>";
+    }
+    let data = document.getElementById("getExampleTwo");
+    data.innerHTML = text
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleThree = () => {
+    const list = document.body.childNodes;
+    console.log(list);
+    let text = "";
+    for (let value of list.entries()) {
+        text += `${value[0]} ${value[1].nodeValue}<br>`;
+    }
+    let data = document.getElementById("getExampleThree");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleFour = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for (let value of list.keys()) {
+        text += `${value}<br>`;
+    }
+    let data = document.getElementById("getExampleFour");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleFive = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for (let value of list.values()) {
+        text += `${value}<br>`;
+    }
+    let data = document.getElementById("getExampleFive");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The isContentEditable Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="listExampleOne" contenteditable="true">I am myP. Am I editable?</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let answer = document.querySelector("#listExampleOne").isContentEditable;
+    let text = "";
+    if (answer == true) {
+          text = "myP is editable. Try to change the text.";
+    } else {
+        text = "myP is not editable.";
+    }
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#content {
+    height: 100px;
+    width: 100px;
+    background-color: coral;
+    padding: 15px;
+    border: 1px solid black;
+    margin: 10px;
+    overflow: scroll;
+}
+</style>
+</head>
+<body>
+<h1>The Element Object</h1>
+<h2>The scrollHeight and scrollWidth Properties</h2>
+
+<div><hr>
+    <button onclick="scrollPageWidth()">scroll Page Width</button>
+    <button onclick="scrollPageHeight()">scroll Page Height</button>
+    <p>Click "Adjust" to set the width and height of "content" to the values returned from scrollHeight and scrollWidth.</p>
+    <div id="content">Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..Some content..</div>
+</div><hr>
+
+<script>
+let scrollPageWidth = () => {
+    const element = document.getElementById("content");
+    element.style.width = element.scrollWidth + "px";
+}
+
+let scrollPageHeight = () => {
+    const element = document.getElementById("content");
+    element.style.height = element.scrollHeight + "px";
+}
+</script>
+</body>
+</html>

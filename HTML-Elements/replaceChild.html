@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The replaceChild() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">"Replace"</button>
+    <p>Click "Replace" to replace the first item in the the list.</p>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>This example replaces the Text node "Coffee" with a Text node "Water". Replacing the entire li element is also an alternative.</p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <p>Click the button to replace the first item in the the list.</p>
+    <ul id="listExampleTwo">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<script>
+// Replace a text node in an <li> element with a new text node:
+let getExampleOne = () => {
+    const element = document.getElementById("listExampleOne").children[0];
+    const newNode = document.createTextNode("Water");
+    element.replaceChild(newNode, element.childNodes[0]);
+    element.style.backgroundColor = "yellow";
+}
+
+// Replace an <li> element with a new <li> element:
+let getExampleTwo = () => {
+    const element = document.createElement("li");
+    const textNode = document.createTextNode("WATER");
+    element.appendChild(textNode);
+
+    const list = document.getElementById("listExampleTwo");
+    list.replaceChild(element, list.children[0]);
+    list.children[0].style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

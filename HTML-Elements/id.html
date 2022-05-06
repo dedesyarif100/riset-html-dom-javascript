@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The id Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p>The value of the id attribute of the first link is:</p>
+    <div id="listExampleOne">
+        <a id="html" href="https://www.w3schools.com/html/">HTML</a>
+        <a id="css" href="https://www.w3schools.com/css/">CSS</a>
+        <a id="javascript" href="https://www.w3schools.com/js/">JavaScript</a>
+    </div>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Change</button>
+    <p>Click "Change" to change the value of the id attribute of the link.</p>
+    <div id="listExampleTwo">
+        <a id="w3school" href="https://www.w3schools.com/">W3Schools</a>
+    </div>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Change</button>
+    <p id="getExampleThree">Click "Change" to change my font size.</p>
+</div><hr>
+
+<script>
+// Get the id of the first anchor:
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    let data = listExampleOne.querySelector("#html").id;
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = data;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Change the id of an element:
+let getExampleTwo = () => {
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    let w3school = listExampleTwo.querySelector("#w3school");
+    w3school.id = "newid";
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = w3school.id;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Change the font size of "myP":
+let getExampleThree = () => {
+    const getExampleThree = document.querySelector("#getExampleThree");
+    getExampleThree.style.fontSize = "24px";
+    getExampleThree.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

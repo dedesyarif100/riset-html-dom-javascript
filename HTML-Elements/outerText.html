@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Change Header</button>
+    <div id="listExampleOne">
+        <h1>Set outerText</h1>
+    </div>
+    <p>When setting the outerText, the entire element gets replaced.</p>
+    <p>Click the button to change (and remove) the h1 element:</p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    let result = listExampleOne.querySelector("h1");
+    if (result) {
+        result.outerText = "Changed content!";
+        listExampleOne.style.backgroundColor = "yellow";
+    }
+}
+</script>
+</body>
+</html>

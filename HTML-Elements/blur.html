@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The focus() and blur() Methods</h2>
+
+<div><hr>
+    <input type="text" id="myText" value="A text field">
+    <p>Click the buttons to give or remove focus from the text field.</p>
+    <button type="button" onclick="getFocus()">Get focus</button>
+    <button type="button" onclick="loseFocus()">Lose focus</button>
+</div><hr>
+
+<div><hr>
+    <a id="myAnchor" href="https://www.w3schools.com">Visit W3Schools.com</a>
+    <div>
+        <input type="button" onclick="getfocusUrl()" value="Get focus">
+        <input type="button" onclick="losefocusUrl()" value="Lose focus">
+    </div>
+</div><hr>
+
+<script>
+function getFocus() {
+  	document.getElementById("myText").focus();
+}
+
+function loseFocus() {
+  	document.getElementById("myText").blur();
+}
+
+let getfocusUrl = function() {
+    document.getElementById("myAnchor").focus();
+}
+
+let losefocusUrl = () => {
+    document.getElementById("myAnchor").focus();
+}
+</script>
+</body>
+</html>

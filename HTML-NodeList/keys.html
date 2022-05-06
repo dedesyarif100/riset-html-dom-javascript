@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The keys() Method</h2>
+<p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+<div><hr>
+    <p>The keys of the body element's child nodes are:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>The keys of the body element's child nodes are:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for (let x of list.keys()) {
+        text += x + "<br>";
+    }
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const list = document.body.childNodes;
+    let text = "";
+    for (let x of list.values()) {
+        text += x + "<br>";
+    }
+    let data = document.getElementById("getExampleTwo");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <h1 id="getExampleOne">The Element Object</h1>
+    <h2>The style Property</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="listExampleTwo" style="border-top: 5px solid red;">The value of my top border is:</p>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let data = document.querySelector("#getExampleOne");
+    data.style.color = "red";
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    let value = document.querySelector("#listExampleTwo").style.borderTop;
+    let data = document.querySelector("#getExampleTwo");
+    data.innerHTML = value;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

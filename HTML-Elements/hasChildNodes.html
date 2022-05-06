@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The hasChildNodes() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p>Does the list above have any child nodes?</p>
+    <p>If you remove the child nodes of the list the result will be false.</p>
+    <p><strong>Note:</strong> Whitespace between nodes is considered text nodes.
+    If you leave any white space or line feeds, the list still has child nodes.</p>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <p>Click the button to remove the child nodes from the list, one by one:</p>
+    <p><strong>Note:</strong> Whitespace between nodes is considered text nodes.
+    Some of the child nodes you remove are invisible white space or line feeds.</p>
+    <ul id="listExampleTwo">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul> 
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let answer = document.querySelector("#listExampleOne").hasChildNodes();
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = answer;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    // element.childNodes[0].innerHTML = "tes";
+    if (element.hasChildNodes()) {
+        element.removeChild(element.childNodes[0]);
+    }
+}
+</script>
+</body>
+</html>

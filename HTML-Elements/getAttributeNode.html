@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {
+    color: red;
+}
+</style>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div id="listExampleOne">
+        <h1 class="democlass">The Element Object</h1>
+        <h2>The getAttributeNode() Method</h2>
+    </div>
+    <p>The value of the class attribute node of the first h1 element is:</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    Read about the <a id="listExampleTwo" href="dom_obj_attributes.asp" target="_blank">Attr object</a>
+    <p>Click the button to display the value of the target attribute node of the link above.</p>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    const element = listExampleOne.querySelector(".democlass");
+    const attr = element.getAttributeNode("class");
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = attr.value;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    let text = element.getAttributeNode("href").value;
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = text;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

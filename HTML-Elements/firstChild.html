@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The firstChild Property</h2>
+
+<div><hr>
+    <p>Example list:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <ul id="listExampleOne"><li>Coffee</li><li>Tea</li></ul>
+    <p>The HTML content of the list's first child node is:</p>
+    <p id="getExampleOne"></p>    
+</div><hr>
+
+<div><hr>
+    <p>Click the button to get the text of the first child node of the select element.</p>
+    <p><button onclick="getExampleTwo()">Try it</button></p>
+    <select id="listExampleTwo" size="4"><option>Audi</option><option>BMW</option><option>Saab</option><option>Volvo</option></select>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <p><button onclick="getExampleThree()">Try it</button></p>
+    <div id="listExampleThree"><p>A paragraph (First child)</p><p>A paragraph (Second child)</p></div>
+    <p>The node name of "myDIV"s first child node is:</p>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+// Return the HTML content of the first child node of an <ul> element:
+let getExampleOne = () => {
+    let text = document.getElementById("listExampleOne").firstChild.innerHTML;
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Get the text of the first child node of a <select> element:
+let getExampleTwo = () => {
+    // let text = document.getElementById("mySelect").firstChild.text;
+    let text = document.getElementById("listExampleTwo").childNodes[1].text;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = text;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// However, if you remove the whitespace from the source, there are no #text nodes in "myDIV":
+let getExampleThree = () => {
+    let node = document.getElementById("listExampleThree").firstChild.nodeName;
+    let getExampleThree = document.getElementById("getExampleThree");
+    getExampleThree.innerHTML = node;
+    getExampleThree.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

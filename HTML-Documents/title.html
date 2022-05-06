@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>My title</title>
+<body>
+<h1>The Document Object</h1>
+<h2>The title Property</h2>
+
+<div><hr>
+    <p>The title of this document is:</p>
+    <p id="demo"></p>
+    <button onclick="getExampleOne()">Click</button>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    document.title = "A new title";
+    let demo = document.getElementById("demo");
+    demo.innerHTML = document.title;
+    demo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

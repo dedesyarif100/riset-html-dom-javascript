@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>The Document Object</h1>
+<h2>The querySelectorAll() Method</h2>
+
+<div><hr>
+    <button onclick="resetAll()">Reset All</button>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div id="getExampleOne">
+        <h2 class="example">A heading</h2>
+        <p class="example">Add a background color all elements with class="example":</p>
+        <p class="example">A paragraph 1</p>
+        <p class="example">A paragraph 2</p>
+        <p class="example">A paragraph 3</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div id="getExampleTwo">
+        <span>data 1</span>
+        <span>data 2</span>
+        <span>data 3</span>
+    </div>
+    <button onclick="getExampleTwo()">Click</button>
+</div><hr>
+
+<div><hr>
+    <div class="getExampleThree">
+        <h2 class="example">A heading</h2>
+        <p class="example">A paragraph 1</p>
+        <p class="example">A paragraph 2</p>
+        <p class="example">A paragraph 3</p>
+    </div>
+    <button onclick="getExampleThree()">Click</button>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Click</button>
+    <div id="getExampleFour">
+        Get Length
+        <span id="getLengthElementPClassExample"></span>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div class="getExampleFive">
+        <a href="https://www.w3schools.com">w3schools.com</a>
+        <a href="http://www.disney.com" target="_blank">disney.com</a>
+        <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+    </div>
+    <button onclick="getExampleFive()">Click</button>
+</div><hr>
+
+<div><hr>
+    <h2 id="listExampleSixDataOne">H3 element 1</h2>
+    <p id="listExampleSixDataTwo">Paragraf One</p>
+    <h2 class="listExampleSixDataThree">H3 element 2</h2>
+    <p class="listExampleSixDataFour">Paragraf Two</p>
+    <ul id="exampleSixSectionOne">
+        <li id="sectionOne-listOne">Section One</li>
+        <li id="sectionOne-listTwo">Section One</li>
+        <li id="sectionOne-listThree">Section One</li>
+    </ul>
+    <ul id="exampleSixSectionTwo">
+        <li id="sectionTwo-listOne" name="listOne">Section One</li>
+        <li id="sectionTwo-listTwo" name="listTwo">Section One</li>
+        <li id="sectionTwo-listThree" name="listThree">Section One</li>
+    </ul>
+    <button onclick="getExampleSix()">Click</button>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleSeven()">Click</button>
+    <div class="word">HELLO WORLD</div>
+    <h3>H3 ELEMENT</h3>
+    <span class="word">SPAN ELEMENT</span>
+</div><hr>
+
+<script>
+let resetAll = () => {
+    // Select all elements with class="example":
+    const nodeList = document.querySelectorAll(".example");
+    console.log(nodeList);
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.backgroundColor = "";
+    }
+
+    const elementSpan = document.querySelectorAll("span");
+    for (let i = 0; i < elementSpan.length; i++) {
+        elementSpan[i].style.backgroundColor = "";
+    }
+
+    const getExampleFour = document.querySelector("#getExampleFour");
+    getExampleFour.querySelector("#getLengthElementPClassExample").innerHTML = "";
+
+    const getExampleFive = document.querySelector(".getExampleFive");
+    const elementA = getExampleFive.querySelectorAll("a[target]");
+    for (let i = 0; i < elementA.length; i++) {
+        elementA[i].style.border = "";
+    }
+}
+
+let getExampleOne = () => {
+    // Select all elements with class="example":
+    let getExampleOne = document.querySelector("#getExampleOne");
+    console.log(getExampleOne);
+    const nodeList = getExampleOne.querySelectorAll(".example");
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.backgroundColor = "red";
+    }
+}
+
+let getExampleTwo = () => {
+    // Add a background color to the first <p> element:
+    const getExampleTwo = document.querySelector("#getExampleTwo");
+    const elementSpan = getExampleTwo.querySelectorAll("span");
+    for (let i = 0; i < elementSpan.length; i++) {
+        elementSpan[i].style.backgroundColor = "red";
+    }
+}
+
+let getExampleThree = () => {
+    let getExampleThree = document.querySelector(".getExampleThree");
+    const elementPClassExample = getExampleThree.querySelectorAll("p.example");
+    for (let i = 0; i < elementPClassExample.length; i++) {
+        elementPClassExample[i].style.backgroundColor = "yellow";
+    }
+}
+
+let getExampleFour = () => {
+    // Number of elements with class="example":
+    const getLengthElementPClassExample = document.querySelectorAll(".example").length;
+    const getExampleFour = document.querySelector("#getExampleFour");
+    getExampleFour.querySelector("#getLengthElementPClassExample").innerHTML = getLengthElementPClassExample;
+}
+
+let getExampleFive = () => {
+    // Set the border of all <a> elements with a "target" attribute:
+    const getExampleFive = document.querySelector(".getExampleFive");
+    const elementA = getExampleFive.querySelectorAll("a[target]");
+    for (let i = 0; i < elementA.length; i++) {
+        elementA[i].style.border = "2px solid red";    
+    }
+}
+
+let getExampleSix = () => {
+    // Set the background color of every <p> element where the parent is a <div> element:
+    const tagDivWithTagP = document.querySelectorAll("div > #exampleSixSectionOne > #sectionOne-listThree, #exampleSixSectionTwo > li[name='listTwo'], #exampleSixSectionTwo > #sectionTwo-listThree");
+    // console.log(tagDivWithTagP);
+    // listTwo
+    for (let i = 0; i < tagDivWithTagP.length; i++) {
+        if (tagDivWithTagP[i].id === "sectionTwo-listTwo") {
+            tagDivWithTagP[i].style.backgroundColor = "yellow";
+        } else {
+            tagDivWithTagP[i].style.backgroundColor = "red";
+        }
+    }
+}
+
+let getExampleSeven = () => {
+    // Set the background color of all <h3>, <div> and <span> elements:
+    const tagSpanDivH3 = document.querySelectorAll("div.word, h3, span.word");
+    for (let i = 0; i < tagSpanDivH3.length; i++) {
+        tagSpanDivH3[i].style.backgroundColor = "blue";
+    }
+}
+</script>
+</body>
+</html>

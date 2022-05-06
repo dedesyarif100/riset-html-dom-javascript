@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The documentURI Property</h2>
+
+<div><hr>
+    <p>The location of this document is:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+    <p>The documentURI property is not supported in Internet Explorer 11 (or earlier).</p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let uri = document.documentURI;
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = uri;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

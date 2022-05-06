@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<style>
+.container, .demo {
+    background-color: tomato;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The closest() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div class="demo"> Grandparent
+        <div class="container">Container
+            <div class="near">Near
+                <div class="nearest">Nearest
+                    <div class="child">Child
+                          <div id="myElement">
+                            The parent of this div element will be selected.
+                        </div>			
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo" class="container"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // console.log(document.querySelector(".child").className);
+    const element = document.getElementById("myElement");
+    const closest = element.closest(".child");
+    if (closest) {
+        closest.style.border = "1px solid black";
+    }
+}
+
+let getExampleTwo = () => {
+    const checkClassExisting = document.getElementById("getExampleTwo");
+    let text = "";
+    if (checkClassExisting.matches(".container, .wrapper")) {
+        text = "This element matches one of the selectors.";
+    } else {
+        text = "This element does not match any of the selectors.";
+    }
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = text;
+}
+</script>
+</body>
+</html>

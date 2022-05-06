@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The lastElementChild Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p>The HTML content of "myLIST"s last child element is:</p>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <p>The tag name of "myDIV"s last child element is:</p>
+    <div id="listExampleTwo">
+        <p>A P element - First child in "myDIV"</p>
+        <span>A Span element - Last child in in "myDIV"</span>
+    </div>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Click</button>
+    <p>The text of the last child of the select element is:</p>
+    <select id="listExampleThree" size="5">
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Saab</option>
+        <option>Volvo</option>
+        </select>
+    <br><br>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+// Get the HTML content of the last child of a <ul> element:
+let getExampleOne = () => {
+    const element = document.querySelector("#listExampleOne")
+    let data = document.querySelector("#getExampleOne");
+    data.innerHTML = element.lastElementChild.innerHTML;
+    data.style.backgroundColor = "yellow";
+}
+
+// Get the tag name of the last child of a <div> element:
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    let data = document.querySelector("#getExampleTwo");
+    // data.innerHTML = element.lastElementChild.textContent;
+    data.innerHTML = element.lastElementChild.tagName;
+    data.style.backgroundColor = "yellow";
+}
+
+// Get the text of the last child of a <select> element:
+let getExampleThree = () => {
+    const element = document.querySelector("#listExampleThree");
+    let data = document.querySelector("#getExampleThree");
+    data.innerHTML = element.lastElementChild.textContent;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

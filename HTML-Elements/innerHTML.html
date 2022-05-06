@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The innerHTML Property</h2>
+
+<div><hr>
+    <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+</div><hr>
+
+<div><hr>
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p>The HTML content of the ul element "myList" is:</p>
+    <p id="getDataMyList"></p>
+</div><hr>
+
+<div><hr>
+    <p id="deleteString">Click the button to delete my HTML content (innerHTML).</p>
+    <button onclick="deleteString()">Try it</button>
+</div><hr>
+
+<div><hr>
+    <button onclick="addString()">Try it</button>
+    <div>
+        <p id="addString">Click the button double this text | <br></p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <a id="url" target="_blank" href="https://www.microsoft.com">Microsoft</a>
+    <button onclick="changeURL()">Change the url</button>
+</div><hr>
+
+<div><hr>
+    <p id="innerTextContentValue">   This element has extra spacing   and contains <span>a span element</span>.</p>
+    <button onclick="getinnerHTML()">Get innerHTML</button>
+    <button onclick="getinnerText()">Get innerText</button>
+    <button onclick="gettextContent()">Get textContent</button>
+    <pre id="getInnerTextContentValue"></pre>
+</div><hr>
+
+<script>
+// Change the HTML content of an element with id="demo":
+function myFunction() {
+    document.getElementById("demo").innerHTML = "I have changed!";
+}
+
+// Get the HTML content of a <ul> element with id="myList":
+let html = document.getElementById("myList").innerHTML;
+document.getElementById("getDataMyList").innerHTML = html;
+
+// Delete the HTML content of a <p> element with id="demo":
+let deleteString = () => {
+    document.getElementById("deleteString").innerHTML = "";
+}
+
+// Repeat the HTML content of an element:
+let addString = () => {
+    const element = document.getElementById("addString");
+    element.innerHTML += element.innerHTML;
+}
+
+// Change the HTML content and URL of a link:
+let link = "https://www.w3schools.com";
+let stringNewLink = "W3Schools";
+let changeURL = () => {
+    let element = document.getElementById("url");
+    let oldValueAttributeHref = element.href;
+    let oldValueInnerHTML = element.innerHTML;
+    console.log(oldValueAttributeHref);
+
+    element.innerHTML = stringNewLink;
+    element.href = link;
+    stringNewLink = oldValueInnerHTML;
+    link = oldValueAttributeHref;
+}
+
+// The Differences Between innerHTML, innerText and textContent
+let getinnerHTML = () => {
+    let text = document.getElementById("innerTextContentValue").innerHTML;
+    document.getElementById("getInnerTextContentValue").innerText = text;
+}
+let getinnerText = () => {
+    let text = document.getElementById("innerTextContentValue").innerText;
+    document.getElementById("getInnerTextContentValue").innerText = text;
+}
+let gettextContent = () => {
+    let text = document.getElementById("innerTextContentValue").textContent;
+    document.getElementById("getInnerTextContentValue").innerText = text;
+}
+</script>
+</body>
+</html>

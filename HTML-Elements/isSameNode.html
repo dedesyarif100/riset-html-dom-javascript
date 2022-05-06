@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div><hr>
+    <p>Click the button to check if the ul element with id="myList" is the same as the document's first ul element.</p>
+    <button onclick="getExampleOne()">Try it</button>
+    <ul id="listExampleOne"><li>Coffee</li><li>Tea</li></ul>
+    <p><strong>Note:</strong> Firefox stopped supported this method as of version 10, Instead, use === to compare if two nodes are the same.</p>
+    <p><strong>Note:</strong> Internet Explorer 8 and earlier does not support the isSameNode() method.</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>Click the button to check if the ul element with id="myList" is the same as the document's first ul element. If so, add a color to its first child.</p>
+    <button onclick="getExampleTwo()">Try it</button>
+    <ul id="listExampleTwo"><li>Coffee</li><li>Tea</li></ul>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let item1 = document.querySelector("#listExampleOne");
+    let item2 = document.getElementsByTagName("UL")[0];
+    let result = item1.isSameNode(item2);
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = result;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    let item1 = document.querySelector("#listExampleTwo");
+    let item2 = document.getElementsByTagName("UL")[0];
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    if (item1 === item2) { 
+        getExampleTwo.innerHTML = "THEY ARE THE SAME!!";
+        getExampleTwo.style.backgroundColor = "yellow";
+    } else {
+        getExampleTwo.innerHTML = "They are not the same.";
+        getExampleTwo.style.backgroundColor = "red";
+    }
+}
+</script>
+</body>
+</html>

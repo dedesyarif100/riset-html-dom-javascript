@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {
+    color: red;
+}
+</style>
+<body>
+<h2>The setAttributeNode() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Change</button>
+    <p>Click "Change" to set the class attribute node of the first header.</p>
+    <div id="listExampleOne">
+        <h1>The Element Object</h1>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Add</button>
+    <p>Click "Add" to add a href attribute to the anchor above.</p>
+    <div id="listExampleTwo">
+        <a id="getExampleTwo">Go to W3schools.com</a>
+    </div>
+</div><hr>
+
+<script>
+// Set the class attribute node of the first <h1> element:
+let getExampleOne = () => {
+    const attr = document.createAttribute("class");
+    attr.value = "democlass";
+    let listExampleOne = document.querySelector("#listExampleOne");
+    listExampleOne = listExampleOne.querySelector("h1");
+    listExampleOne.setAttributeNode(attr);
+    listExampleOne.style.backgroundColor = "yellow";
+}
+
+// Set the href attribute node of a <a> element:
+let getExampleTwo = () => {
+    let attrHref = document.createAttribute("href");
+    attrHref.value = "https://www.w3schools.com";
+
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    listExampleTwo = listExampleTwo.querySelector("#getExampleTwo")
+    listExampleTwo.setAttributeNode(attrHref);
+
+    let attrBlank = document.createAttribute("target");
+    attrBlank.value = "_blank";
+    listExampleTwo.setAttributeNode(attrBlank)
+    listExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

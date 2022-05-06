@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<style>
+#listExampleOne, #listExampleTwo {
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+    margin: 15px;
+    border: 5px solid red;
+    background-color: lightblue;
+}
+</style>
+
+<body>
+<h1>The Element Object</h1>
+<h2>The offsetHeight and offsetWidth Properties</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div id="listExampleOne">
+        <b>Information about this div:</b><br>
+        Height: 250px<br>
+        Width: 400px<br>
+        Padding: 10px<br>
+        Margin: 15px<br>
+        Border: 5px<br>
+        <p id="getExampleOne"></p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <div id="listExampleTwo">
+        <b>Information about this div:</b><br>
+        Height: 250px<br>
+        Width: 400px<br>
+        Padding: 10px<br>
+        Margin: 15px<br>
+        Border: 5px<br>
+        <p id="getExampleTwo"></p>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.querySelector("#listExampleOne");
+    let text = "Height including padding and border: " + element.offsetHeight + "px<br>";
+    text += "Width including padding and border: " + element.offsetWidth + "px";
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    let text = "";
+    text += "clientHeight: " + element.clientHeight + "px<br>";
+    text += "offsetHeight: " + element.offsetHeight + "px<br>";
+    text += "clientWidth: " + element.clientWidth + "px<br>";
+    text += "offsetWidth: " + element.offsetWidth + "px";
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = text;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

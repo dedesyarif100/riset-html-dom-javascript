@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The createDocumenFragment() Method</h2>
+
+<div><hr>
+	<p>Add array items to an empty list:</p>
+	<button onclick="getExampleOne()">Click</button>
+	<ul id="getExampleOne">
+		<li>Apple</li> 
+		<li>Pear</li>
+	</ul>
+</div><hr>
+
+<div><hr>
+	<p>Add array items to an empty list:</p>
+	<button onclick="getExampleTwo()">Click</button>
+	<ul id="getExampleTwo">
+
+	</ul>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+	const oldData = document.querySelectorAll("#getExampleOne")[0].children;
+	let data = document.getElementById("getExampleOne");
+	const fruits = ["Banana", "Orange", "Mango"];
+	// Create a document fragment:
+	const dFrag = document.createDocumentFragment();
+	for (let x in fruits) {
+		if (oldData.length === 2) {
+			const li = document.createElement('li');
+			li.textContent = fruits[x];
+			li.style.backgroundColor = "yellow";
+			dFrag.appendChild(li);
+		} else {
+			data.removeChild(data.lastElementChild);
+		}
+	}
+	document.getElementById('getExampleOne').appendChild(dFrag);
+}
+
+let getExampleTwo = () => {
+	const oldData = document.querySelectorAll("#getExampleTwo")[0].children;
+	let data = document.getElementById("getExampleTwo");
+	const fruits = [1, 2, [1, 2, 3, 4, 5], [6, 7, 8, 9, 10]];
+	// console.log(oldData.length);
+
+	let num = 1;
+	const dFrag = document.createDocumentFragment();
+	for (const x in fruits) {
+		if (oldData.length === 0) {
+			const li = document.createElement("li");
+			li.textContent = fruits[x];
+			dFrag.appendChild(li);
+			if ( typeof fruits[x] === "object" ) {
+				const ul = document.createElement("ul");
+				let sub = li.appendChild(ul);
+				let attrId = document.createAttribute("id");
+				attrId.value = `sub-li-${num}`;
+				sub.setAttributeNode(attrId);
+				// console.log(attrId);
+				// console.log(sub);
+				let getSubId = document.getElementById(`sub-li-1`);
+				for (const y in fruits[x]) {
+					// console.log(sub);
+					const li = document.createElement("li");
+					// console.log(li);
+					li.textContent = fruits[x][y];
+					// console.log(li);
+					// getSubId.appendChild(li);
+					dFrag.appendChild(li);
+				}
+				num++;
+			}
+		} else {
+
+		}
+	}
+	document.getElementById("getExampleTwo").appendChild(dFrag);
+}
+</script>
+</body>
+</html>

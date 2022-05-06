@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML DOM Attributes</h1>
+<h2>The length Property</h2>
+
+<div><hr>
+    <img id="listExampleOne" alt="Flower" src="klematis.jpg" width="150" height="113">
+    <p>The attributes of the image are:</p>
+    <button onclick="getExampleOne()">Append</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Append</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Append</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // const nodeMap = document.getElementById("listExampleOne").attributes.src.name;
+    // const nodeMap = document.getElementById("listExampleOne").attributes.src.value;
+    const nodeMap = document.getElementById("listExampleOne").attributes;
+    let text = "";
+    for (let i = 0; i < nodeMap.length; i++) {
+        text += nodeMap[i].name + " = " + nodeMap[i].value + "<br>";
+    }
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const lengthImage = document.getElementById("listExampleOne").attributes.length;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = lengthImage;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+let getExampleThree = () => {
+    let attr = document.getElementById("listExampleOne").attributes[2].name;
+    let getExampleThree = document.getElementById("getExampleThree");
+    getExampleThree.innerHTML = attr;
+    getExampleThree.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {color: red;}
+</style>
+<body>
+<h2>The createAttribute() and setAttributeNode() Methods</h2>
+
+<div><hr>
+    <p>Click "Add" to create a class attribute and add it to first h1 element.</p>
+    <h1 style="color: black;">The Document Object</h1>
+    <button onclick="getExampleOne()">Toogle</button>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleTwo">
+        <p>Click "Add" to create a class attribute and add it to first h1 element.</p>
+        <h2>Example Two</h2>
+        <button onclick="getExampleTwo()">Toogle</button>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleThree">
+        <p>Click "Add" to create a class attribute and add it to first h1 element.</p>
+        <a id="getExampleThree">Go to W3schools.com</a>
+        <button onclick="getExampleThree()">Toogle</button>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const tagH1 = document.getElementsByTagName("h1");
+    let oldColor = tagH1[0].style.color;
+    let newColor = "red";
+    if (oldColor !== newColor) {
+        tagH1[0].style.color = newColor;
+    } else {
+        oldColor = "black"
+        tagH1[0].style.color = oldColor;
+    }
+    const attId = document.createAttribute("id");
+    attId.value = "idH1";
+    tagH1[0].setAttributeNode(attId);
+}
+
+let getExampleTwo = () => {
+    const attClass = document.createAttribute("class");
+    attClass.value = "democlass";
+    const data = document.querySelectorAll("#listExampleTwo")[0].children;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].tagName === "H2") {
+            if (data[i].className === "") {
+                console.log(data[i]);
+                data[i].setAttributeNode(attClass);
+            } else {
+                data[i].removeAttributeNode(data[i].getAttributeNode("class"));
+            }
+        }
+    }
+}
+
+let getExampleThree = () => {
+    const attrHref = document.createAttribute("href");
+    const attrTarget = document.createAttribute("target");
+    attrHref.value = "https://www.w3schools.com";
+    attrTarget.value = "_blank";
+    const data = document.querySelectorAll("#listExampleThree")[0].children;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].tagName === "A") {
+            if (data[i].href === "") {
+                data[i].setAttributeNode(attrHref);
+                data[i].setAttributeNode(attrTarget);
+            } else {
+                data[i].removeAttributeNode(data[i].getAttributeNode("href"));
+                data[i].removeAttributeNode(data[i].getAttributeNode("target"));
+            }
+        }
+    }
+}
+</script>
+</body>
+</html>

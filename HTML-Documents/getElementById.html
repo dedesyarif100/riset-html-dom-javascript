@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The getElementById() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = "Hello World";
+    getExampleOne.style.color = "red";
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

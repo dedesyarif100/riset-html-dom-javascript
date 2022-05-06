@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The scripts Property</h2>
+
+<script id="myFirstScript">
+document.write("Hello World!");
+</script>
+
+<div><hr>
+    <p>Display the id of each script element:</p>
+    <p id="length"></p>
+    <button onclick="getExampleOne()">Click</button>
+</div><hr>
+
+<div><hr>
+    <script id="myThreeScript">
+        let tes = [1, 2, 3, 4, 5];
+        let object = {
+            name: "Dede",
+            age: 25,
+            job: "Software Engineer"
+        };
+    </script>
+    <p id="text"></p>
+    <button onclick="getExampleTwo()">Click</button>
+</div><hr>
+
+<div><hr>
+    <p id="demo"></p>
+    <button onclick="getExampleThree()">Click</button>
+</div><hr>
+
+<script id="mySecondScript">
+let getExampleOne = () => {
+    // Number of <script> elements in the document:
+    let length = document.getElementById("length");
+    length.innerHTML = document.scripts.length;
+    length.innerHTML = document.scripts[0].text;
+    length.innerHTML = document.scripts.item(0).text;
+    length.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    // Return the content of the <script> element with id="myScript":
+    let text = document.scripts.namedItem("myThreeScript").text;
+    let data = document.getElementById("text");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleThree = () => {
+    // Loop over all <script> elements and output each id:
+    let demo = "";
+    const collection = document.scripts;
+    for (let i = 0; i < collection.length; i++) {
+        demo += collection[i].id + "<br>";
+    }
+    let data = document.getElementById("demo");
+    data.innerHTML = demo;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

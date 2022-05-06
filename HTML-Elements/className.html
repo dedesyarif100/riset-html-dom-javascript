@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<style>
+.mystyle {
+    background-color: coral;
+    padding: 16px;
+}
+.newstyle {
+    background-color: lightblue;
+    text-align: center;
+    font-size: 25px;
+    padding: 16px;
+}
+.addiionClassOne {
+    text-align: center;
+}
+.addiionClassTwo {
+    font-size: 25px;
+}
+.scroll {
+    background-color: yellow;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The className Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p>Click the button to set a class for myDIV:</p>
+    <div id="getExampleOne">
+        <p>I am myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <div id="listExampleTwo" class="mystyle">
+        <p>Dede Syarifudin</p>
+    </div>
+    <p>The value of the class attribute of "myDIV" is:</p>
+    CLASS NAME = <span id="getExampleTwo"></span>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Toggle</button>
+    <div id="listExampleThree" class="mystyle">
+        <p>DEDE SYARIFUDIN</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Toggle</button>
+    <div id="listExampleFour">
+        CLASSNAME : <span class="data 1">DATA 1</span><br>
+        CLASSNAME : <span class="data 2">DATA 2</span><br>
+        CLASSNAME : <span class="data 3">DATA 3</span><br>
+        CLASSNAME : <span class="data 4">DATA 4</span><br>
+    </div>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFive()">getExampleFive</button>
+    <div id="listExampleFive" class="mystyle">
+        <p>DEDE SYARIFUDIN HIDAYAT</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleSix()">getExampleSix</button>
+    <div id="listExampleSix" class="mystyle">
+        <p>DEDE SYARIFUDIN HIDAYAT</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleSeven()">getExampleSeven</button>
+    <div id="activeExampleSeven"></div>
+    <div id="getExampleSeven">
+        <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+    </div>
+</div><hr>
+
+<script>
+// Set the class attribute for an element:
+let getExampleOne = () => {
+    // document.getElementById("myDIV").classList.add("mystyle");
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.className = "mystyle";
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Get the class attribute of "myDIV":
+let getExampleTwo = () => {
+    let value = document.getElementById("listExampleTwo").className;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = value;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Toggle between two class names:
+let getExampleThree = () => {
+    const element = document.getElementById("listExampleThree");
+    if (element.className == "mystyle") {
+        element.className = "newstyle";
+    } else {
+        element.className = "mystyle";
+    }
+}
+
+// Get the class attribute of the first <div> element (if any):
+let getExampleFour = () => {
+    let listExampleFour = document.querySelector("#listExampleFour");
+    let dataSpan = listExampleFour.getElementsByClassName("data")[0].className;
+    let getExampleFour = document.getElementById("getExampleFour");
+    getExampleFour.innerHTML = dataSpan;
+    getExampleFour.style.backgroundColor = "yellow";
+}
+
+// To add new classes, without overwriting existing values, add a space and the new classes:
+let getExampleFive = () => {
+    let listExampleFive = document.getElementById("listExampleFive");
+    listExampleFive.className += " addiionClassOne addiionClassTwo"
+}
+
+// if "myDIV" has a "myStyle" class, change the font size:
+let getExampleSix = () => {
+    const element = document.getElementById("listExampleSix");
+    if (element.className == "mystyle") {
+        element.style.fontSize = "30px";
+    }
+}
+
+// If you scroll 50 pixels from the top of this page, the class "test" is added:
+let getExampleSeven = () => {
+    window.onscroll = function() {
+        scrollArea();
+    }
+    let activeExampleSeven = document.querySelector("#activeExampleSeven");
+    activeExampleSeven.innerHTML = "active";
+    activeExampleSeven.style.color = "white";
+    activeExampleSeven.style.backgroundColor = "green";
+}
+
+let scrollArea = () => {
+    // console.log(document);
+    if (document.documentElement.scrollTop > 50) {
+        document.getElementById("getExampleSeven").className = "scroll";
+    } else {
+        document.getElementById("getExampleSeven").className = "";
+    }
+}
+</script>
+</body>
+</html>

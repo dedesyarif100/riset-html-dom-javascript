@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The insertAdjacentHTML() Method</h2>
+
+<div><hr>
+    <button onclick="afterend()">Insert</button>
+    <p>Click "Insert" to insert a paragraph after the header.</p>
+    <h2 id="h2AfterEnd">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="afterbegin()">Insert</button>
+    <p>Click "Insert" to insert a span inside the header:</p>
+    <h2 id="h2AfterBegin">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="beforebegin()">Insert</button>
+    <p>Click "Insert" to insert a span before the header:</p>
+    <h2 id="h2BeforeBegin">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="beforeend()">Insert</button>
+    <p>Click "Insert" to insert a span inside the header:</p>
+    <h2 id="h2BeforeEnd">My Header</h2>
+</div><hr>
+
+<script>
+// Insert a new <p> element after a header element:
+let afterend = () => {
+    const h2 = document.getElementById("h2AfterEnd");
+    let html = "<p>My new paragraph.</p>";
+    h2.insertAdjacentHTML("afterend", html);
+}
+
+// Using "afterbegin":
+let afterbegin = () => {
+    const h2 = document.getElementById("h2AfterBegin");
+    let html = "<span style='color:red'>My span > </span>";
+    h2.insertAdjacentHTML("afterbegin", html);
+}
+
+// Using "beforebegin":
+let beforebegin = () => {
+    const h2 = document.getElementById("h2BeforeBegin");
+    let html = "<span style='color:red'>My span > </span>";
+    h2.insertAdjacentHTML("beforebegin", html);
+}
+
+// Using "beforeend":
+let beforeend = () => {
+    const h2 = document.getElementById("h2BeforeEnd");
+    let html = "<span style='color:red'> > My span</span>";
+    h2.insertAdjacentHTML("beforeend", html);
+}
+</script>
+</body>
+</html>

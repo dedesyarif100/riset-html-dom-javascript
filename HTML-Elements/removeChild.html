@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The removeChild() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Remove</button>
+    <p>Click "Remove" to remove the first item from the list:</p>
+    <ul id="getExampleOne">
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Remove</button>
+    <p>Click "Remove" to remove the first child (index 0)</p>
+    <ul id="getExampleTwo">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Remove</button>
+    <p>Click "Remove" to remove all child nodes of ul.</p>
+    <ul id="getExampleThree">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Remove</button>
+    <p>Click "Remove" to remove the element with id="myLI" from the list.</p>
+    <ul>
+        <li>Coffee</li>
+        <li id="myLI">Tea</li>
+        <li>Milk</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="removeLi()">Remove</button>
+    <button onclick="appendLi()">Insert</button>
+    <p>Click the buttons to remove and insert the li element from the ul element:</p>
+    <ul id="getExampleFive">
+        <li id="list">Coffee</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="remove()">Remove</button>
+    <p>Click the buttons to remove the h1 from its parent and insert it into the other document.</p>
+    <h1 id="getExampleSix">The Element Object</h1>
+    <h2>The removeChild() Method</h2>
+    <iframe src="/default.asp" style="height:400px;width:650px;"></iframe>
+</div><hr>
+
+<script>
+// Remove the firsRemove an element from its parent and insert it into another document:t element from a list:
+let getExampleOne = () => {
+    const getExampleOne = document.querySelector("#getExampleOne");
+    console.log(getExampleOne.firstElementChild);
+    if (getExampleOne.firstElementChild) {
+        getExampleOne.removeChild(getExampleOne.firstElementChild);
+    }
+}
+
+// If a list has child nodes, remove the first (index 0):
+let getExampleTwo = () => {
+    const getExampleTwo = document.querySelector("#getExampleTwo");
+    if (getExampleTwo.hasChildNodes()) {
+        if (getExampleTwo.children[1]) {
+            getExampleTwo.removeChild(getExampleTwo.children[1]);
+        }
+    }
+}
+
+// Remove all child nodes from a list:
+let getExampleThree = () => {
+    const list = document.querySelector("#getExampleThree");
+    while (list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+    }
+}
+
+// Remove an element from its parent node:
+let getExampleFour = () => {
+    const element = document.querySelector("#myLI");
+    if (element) {
+        element.parentNode.removeChild(element);
+    }
+}
+
+// Remove an element from its parent, and insert it again:
+const element = document.querySelector("#list");
+let removeLi = () => {
+    if (element.parentNode) {
+        element.parentNode.removeChild(element);
+    }
+}
+let appendLi = () => {
+    const list = document.querySelector("#getExampleFive");
+    list.appendChild(element);
+}
+
+// Remove an element from its parent, and insert it again:
+let remove = () => {
+    const child = document.querySelector("#getExampleSix");
+    if (child) {
+        child.parentNode.removeChild(child);
+    }
+}
+</script>
+</body>
+</html>

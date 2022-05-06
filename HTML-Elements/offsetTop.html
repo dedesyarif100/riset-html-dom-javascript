@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#listExampleOne, #listExampleTwo {
+    top: 100px;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    position: relative;
+    border: 5px solid black
+}
+</style>
+</head>
+<body>
+
+<div><hr>
+    <div id="listExampleOne">
+        <p><button onclick="getExampleOne()">Try it</button></p>
+        <p>Click the button to get offsetTop for the test div.</p>
+        <p>offsetTop is: <span id="getExampleOne"></span></p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleTwo">
+        <p><button onclick="getExampleTwo()">Try it</button></p>
+        <p>Click the button to get the left and top offsets for the test div.</p>
+        <p id="getExampleTwo">offsetLeft: <br>offsetTop: </p>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    var testDiv = document.getElementById("listExampleOne");
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = testDiv.offsetTop;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    var testDiv = document.getElementById("listExampleTwo");
+    var data = document.getElementById("getExampleTwo");
+    data.innerHTML = "offsetLeft: " + testDiv.offsetLeft + "<br>offsetTop: " + testDiv.offsetTop;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<style>
+    div.giveColor {
+        background-color: coral;
+        padding: 16px;
+    }
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The addEventListener() Method</h2>
+<div><hr>
+    <p>This example uses the addEventListener() method to add many events on the same button.</p>
+    <button onclick="getExampleOne()">Get Example One</button>
+    <button id="myBtn">Try it</button>
+    <div id="activeExampleOne"></div>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <div id="getExampleTwo">
+        <div id="myDiv1">
+            <p id="myP1">Click this paragraph, I am Bubbling.</p>
+        </div><br>
+        <div id="myDiv2">
+            <p id="myP2">Click this paragraph, I am Capturing.</p>
+        </div>
+    </div>
+    <div id="activeExampleTwo"></div>
+    <p id="listExampleTwo"></p>
+    <button onclick="getExampleTwo()">Get Example Two</button>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Get Example Three</button>
+    <button id="btnProcessCalculating">Get Value</button>
+    <div id="activeExampleThree"></div>
+    <p id="anonymousFunction"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Get Example Four</button>
+    <button id="btnGetColor">Get Color</button>
+    <div id="activeExampleFour"></div>
+    <p id="getColor">Get Color</p>
+</div><hr>
+
+<div class="giveColor"><hr>
+    <div id="myDIV">This orange element has an onmousemove event handler that displays a random number when you move the mouse inside.
+        <p>Click "Remove" to remove the event handler.</p>
+        <button onclick="removeHandler()">Remove</button>
+        <button onclick="addHandler()">Add</button>
+    </div>
+    <p id="showHandler"></p>
+</div><hr>
+
+<script>
+// You can add different events to the same element:
+let getExampleOne = () => {
+    let activeExampleOne = document.querySelector("#activeExampleOne");
+    activeExampleOne.innerHTML = "active";
+    activeExampleOne.style.color = "white";
+    activeExampleOne.style.backgroundColor = "green";
+
+    const element = document.getElementById("myBtn");
+    element.addEventListener("mouseover", myFunction);
+    element.addEventListener("click", mySecondFunction);
+    element.addEventListener("mouseout", myThirdFunction);
+    function myFunction() {
+        document.getElementById("getExampleOne").innerHTML += "Moused over!<br>"
+    }
+    function mySecondFunction() {
+        document.getElementById("getExampleOne").innerHTML += "Clicked!<br>"
+    }
+    function myThirdFunction() {
+        document.getElementById("getExampleOne").innerHTML += "Moused out!<br>"
+    }
+}
+
+// The difference between bubbling and capturing:
+let getExampleTwo = () => {
+    let activeExampleTwo = document.querySelector("#activeExampleTwo");
+    activeExampleTwo.innerHTML = "active";
+    activeExampleTwo.style.color = "white";
+    activeExampleTwo.style.backgroundColor = "green";
+
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+
+    let myP1 = getExampleTwo.querySelector("#myP1");
+    myP1.addEventListener("click", function() {
+        myDisplay("You clicked the P element!", false);
+    }, false);
+    myP1.style.backgroundColor = "red";
+    
+    let myDiv1 = getExampleTwo.querySelector("#myDiv1");
+    myDiv1.addEventListener("click", function() {
+        myDisplay("You clicked the DIV element!", false);
+    }, false);
+    myDiv1.style.backgroundColor = "red";
+    
+    let myP2 = getExampleTwo.querySelector("#myP2");
+    myP2.addEventListener("click", function() {
+        myDisplay("You clicked the P element!", true);
+    }, true);
+    myP2.style.backgroundColor = "green";
+    
+    let myDiv2 = getExampleTwo.querySelector("#myDiv2");
+    myDiv2.addEventListener("click", function() {
+        myDisplay("You clicked the DIV element!", true);
+    }, true);
+    myDiv2.style.backgroundColor = "green";
+
+    function myDisplay(text, status) {
+        let listExampleTwo = document.getElementById("listExampleTwo");
+        listExampleTwo.style.border = "2px solid black";
+        if (status) {
+            listExampleTwo.innerHTML += text + ` = ${status} <br>`;
+        } else {
+            listExampleTwo.innerHTML += text + ` = ${status}<br>`;
+        }
+    }
+}
+
+// To pass parameter values, use an "anonymous function":
+let getExampleThree = () => {
+    let activeExampleThree = document.querySelector("#activeExampleThree");
+    activeExampleThree.innerHTML = "active";
+    activeExampleThree.style.color = "white";
+    activeExampleThree.style.backgroundColor = "green";
+
+    let p1 = 5;
+    let p2 = 7;
+    document.getElementById("btnProcessCalculating").addEventListener("click", function() {
+        anonymousFunction(p1, p2);
+    });
+    function anonymousFunction(a, b) {
+        document.getElementById("anonymousFunction").innerHTML = a * b;
+    }
+}
+
+// Change the background color of a <button> element:
+let getExampleFour = () => {
+    let activeExampleFour = document.querySelector("#activeExampleFour");
+    activeExampleFour.innerHTML = "active";
+    activeExampleFour.style.color = "white";
+    activeExampleFour.style.backgroundColor = "green";
+    document.getElementById("btnGetColor").addEventListener("click", function() {
+        this.style.backgroundColor = "red";
+        document.getElementById("getColor").style.backgroundColor = "yellow";
+    });
+}
+
+const myDiv = document.getElementById("myDIV");
+myDiv.addEventListener("mousemove", handler);
+function removeHandler() {
+      myDiv.removeEventListener("mousemove", handler);
+}
+function addHandler() {
+      myDiv.addEventListener("mousemove", handler);
+}
+function handler() {
+      document.getElementById("showHandler").innerHTML = Math.random();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The remove() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Remove</button>
+    <p id="getExampleOne">Click "Remove", and this paragraph will be removed from the DOM.</p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.querySelector("#getExampleOne");
+    if (element) {
+        element.remove();
+    }
+}
+</script>
+</body>
+</html>

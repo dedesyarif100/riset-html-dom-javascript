@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The tabIndex Property</h2>
+
+<div><hr>
+    <div id="listExampleOne">
+        <p>Navigate the links below by using the "Tab" button on you keyboard.</p>
+        <a href="https://www.w3schools.com">Link 1</a>
+        <a href="https://www.w3schools.com">Link 2</a>
+        <a href="https://www.w3schools.com">Link 3</a>
+    </div>
+    <button onclick="getExampleOne()">Click</button>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleTwo">
+        <a href="http://www.google.com/" tabindex="1">Google</a><br>
+        <a href="https://www.w3schools.com/" tabindex="2">W3Schools</a><br>
+        <a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
+    </div>
+    The tab order of the first link is : <span id="getExampleTwo"></span>
+    <div>
+        <button onclick="getExampleTwo()">Click</button>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let query = document.querySelector("#listExampleOne").getElementsByTagName("a")
+    query[0].tabIndex = "3";
+    query[1].tabIndex = "2";
+    query[2].tabIndex = "1";
+    query[2].focus();
+}
+
+let getExampleTwo = () => {
+    let order = document.querySelector("#listExampleTwo").getElementsByTagName("A")[2].tabIndex;
+    document.getElementById("getExampleTwo").innerHTML = order;
+}
+</script>
+</body>
+</html>

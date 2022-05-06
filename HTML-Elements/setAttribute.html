@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {
+    color: red;
+}
+</style>
+<body>
+<h2>The setAttribute() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Add Class</button>
+    <p>Click "Add Class" to add a class attribute to the h1 element:</p>
+    <h1 id="getExampleOne">The Element Object</h1>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Change</button>
+    <p>Click "Change" to change the input field to an input button.</p>
+    <input id="getExampleTwo" value="OK">
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Try it</button>
+    <p>Click "add" to add an href attribute to the element above.</p>
+    <a id="getExampleThree">Go to w3schools.com</a>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Change</button>
+    <p>Try clicking the link before and after "Change".</p>
+    <a id="getExampleFour" href="https://www.w3schools.com" target="_blank">W3schools</a>.
+    <p>Click "Change" to change the link target to "_self_".</p>
+</div><hr>
+
+<script>
+// Add a class attribute to an element:
+let getExampleOne = () => {
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.setAttribute("class", "democlass");
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Change an input field to an input button:
+let getExampleTwo = () => {
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.setAttribute("type", "button");
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Add a href attribute to an <a> element:
+let getExampleThree = () => {
+    let getExampleThree = document.querySelector("#getExampleThree");
+    getExampleThree.setAttribute("href", "https://www.w3schools.com");
+    getExampleThree.style.backgroundColor = "yellow";
+}
+
+// Change the value of the target attribute to "_self":
+let getExampleFour = () => {
+    const element = document.querySelector("#getExampleFour");
+    element.style.backgroundColor = "yellow";
+    if (element.hasAttribute("target")) {
+        element.setAttribute("target", "_self");
+    }
+}
+</script>
+</body>
+</html>

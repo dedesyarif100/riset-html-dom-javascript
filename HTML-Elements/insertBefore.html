@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The insertBefore() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <p>Click the button to move items from one list to another:</p>
+    <ul id="listExampleTwoSectionOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <ul id="listExampleTwoSectionTwo">
+        <li>Water</li>
+        <li>Milk</li>
+        <li>Juice</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Try it</button>
+    <p>Click the button to move items from one list to another:</p>
+    <ul id="listExampleThreeSectionOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <ul id="listExampleThreeSectionTwo">
+        <li>Water</li>
+        <li>Milk</li>
+        <li>Juice</li>
+    </ul>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    // 1. Create an <li> element
+    // 2. Create a text node
+    // 3. Append the text to the <li> element
+    // 4. Insert the <li> element before the first child in a <ul>:
+    const newNode = document.createElement("li");
+    const textNode = document.createTextNode("Water");
+    newNode.appendChild(textNode);
+    const list = document.querySelector("#listExampleOne");
+    list.insertBefore(newNode, list.children[0]);
+    list.style.backgroundColor = "yellow";
+}
+
+// Move the last element from one list to the beginning of another:
+let getExampleTwo = () => {
+    const node = document.querySelector("#listExampleTwoSectionTwo").lastElementChild;
+    if (node !== null) {
+        const list = document.querySelector("#listExampleTwoSectionOne");
+        list.insertBefore(node, list.children[0]);
+    }
+}
+
+// Move the last element from one list to the end of another:
+let getExampleThree = () => {
+    const node = document.querySelector("#listExampleThreeSectionTwo").lastElementChild;
+    if (node !== null) {
+        const list = document.querySelector("#listExampleThreeSectionOne");
+        list.insertBefore(node, null);
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The hasAttributes() Method</h2>
+
+<div><hr>
+    <p>The body element has attributes:</p>
+    <p>Adding an attribute to the body element, and the result will be true.</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <p>Check is tag "a" has attributes</p>
+    <div id="listExampleTwo">
+        <a href="" id="" class=""></a>
+    </div>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+// checking attribute Tag body
+let getExampleOne = () => {
+    let answer = document.body.hasAttributes();
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = answer;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// checking attribute Tag a
+let getExampleTwo = () => {
+    let listExampleTwo = document.querySelector("#listExampleTwo");
+    let link = listExampleTwo.querySelector("a");
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = link.hasAttributes();
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

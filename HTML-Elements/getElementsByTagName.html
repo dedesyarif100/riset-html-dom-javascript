@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myDIV {
+    border: 1px solid black;
+    padding: 16px;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The getElementsByTagName() Method</h2>
+
+<div><hr>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p>Click "Change" to change the text of the first list item.</p>
+    <button onclick="changeListDataAfterClickButton()">Change</button>
+</div><hr>
+
+<div><hr>
+    <div id="getLengthData">
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+    </div>
+    <p>The number of p elements in "myDIV" is:</p>
+    <p id="getValueLengthData"></p>
+</div><hr>
+
+<div><hr>
+    <p>Click "Change" to change the second p element in "myDIV".</p>
+    <p><button onclick="changeFontSizeSingleData()">Change</button></p>
+    <div id="changeFontSizeSingleData">
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div id="changeFontColorAllData">
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+        <p>I am a paragraph.</p>
+    </div>
+    <p>Click "Change" to change the color of all p elements in "myDIV".</p>
+    <button onclick="changeFontColorAllData()">Change</button>
+</div><hr>
+
+<div><hr>
+    <div id="changeSingleData">
+        <h3>A h3 element in div.</h3>
+        <p>P element in div.</p>
+        <span>A span element in div.</span>
+        <h2>A h2 element in div.</h2>
+        <div>A div element in div.</div>
+        <p>Another p element in div.</p>
+    </div>
+    <button onclick="changeSingleData()">changeSingleData</button>
+</div><hr>
+
+<div><hr>
+    <div id="myDIV">
+        <h3>A h3 element in div.</h3>
+        <p>P element in div.</p>
+        <span>A span element in div.</span>
+        <h2>A h2 element in div.</h2>
+        <div>A div element in div.</div>
+        <p>Another p element in div.</p>
+    </div>
+    <p>Click the button to add a background color to all elements inside the div element.</p>
+    <button onclick="myFunction()">Try it</button>
+</div><hr>
+
+<script>
+// Change the HTML content of the first <li> element in a list:
+let changeListDataAfterClickButton = () => {
+    const list = document.getElementsByTagName("ul")[0];
+    list.getElementsByTagName("li")[0].innerHTML = "MILK";
+    list.getElementsByTagName("li")[0].style.backgroundColor = "yellow";
+}
+
+// Number of <p> elements in "myDIV":
+let element = document.getElementById("getLengthData");
+const nodes = element.getElementsByTagName("p");
+document.getElementById("getValueLengthData").innerHTML = nodes.length;
+document.getElementById("getValueLengthData").style.backgroundColor = "yellow";
+
+// Change the font size of the second <p> element in "myDIV":
+let changeFontSizeSingleData = () => {
+    const element = document.getElementById("changeFontSizeSingleData");
+    element.getElementsByTagName("p")[1].style.fontSize = "24px";
+    element.getElementsByTagName("p")[1].style.backgroundColor = "yellow";
+}
+
+// Change the background color of all <p> elements inside "myDIV":
+let changeFontColorAllData = () => {
+    const div = document.getElementById("changeFontColorAllData");
+    const nodes = div.getElementsByTagName("p");
+    for (let i = 0; i < nodes.length; i++) {
+        nodes[i].style.color = "red";
+        nodes[i].style.backgroundColor = "yellow";
+    }
+}
+
+// Change the background color of the fourth element (index 3) inside "myDIV":
+let changeSingleData = () => {
+    const div = document.getElementById("changeSingleData");
+    div.getElementsByTagName("*")[3].style.backgroundColor = "yellow";
+}
+
+// Change the background color of all elements inside "myDIV":
+function myFunction() {
+    const div = document.getElementById("myDIV");
+    const nodes = div.getElementsByTagName("*");
+    for (let i = 0; i < nodes.length; i++) {
+        nodes[i].style.backgroundColor = "yellow";
+    }
+}
+</script>
+</body>
+</html>

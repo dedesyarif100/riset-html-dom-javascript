@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The removeEventListener() Method</h2>
+
+<div><hr>
+	<p>A mousemove event handler displays a random number every time you move your mouse in this document.</p>
+	<p>Click "Remove" to remove the event handler.</p>
+	<button onclick="addHandler()">Add</button>
+	<button onclick="removeHandler()">Remove</button>
+	<p id="demo"></p>
+</div><hr>
+
+<script>
+document.addEventListener("mousemove", myFunction);
+function myFunction() {
+  	document.getElementById("demo").innerHTML = Math.random();
+}
+let addHandler = () => {
+	document.addEventListener("mousemove", myFunction);
+}
+let removeHandler = () => {
+  	document.removeEventListener("mousemove", myFunction);
+}
+</script>
+</body>
+</html>

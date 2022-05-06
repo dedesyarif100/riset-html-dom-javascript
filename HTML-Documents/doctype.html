@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The doctype Property</h2>
+
+<div><hr>
+    <p>The document.doctype.name is:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const doctypeObj = document.doctype;
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = doctypeObj.name
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The document.getElementsByName Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <div class="parentInput">
+        <p>First Name: <input name="fname" type="text" value="Michael" id="firstname" class="firstname" maxlength="5"></p>
+        <p>First Name: <input name="fname" type="text" value="Doug" id="firstname" class="firstname" maxlength="5"></p>
+        Cats : <input name="fname" type="checkbox" value="Cats">
+        Dogs : <input name="fname" type="checkbox" value="Dogs">
+        Duck : <input name="fname" type="checkbox" value="Duck">
+        Bird : <input name="fname" type="checkbox" value="Bird">
+        <button name="fname" onclick="fname()">KLIK</button>
+    </div>
+    <div name="data">data1</div>
+    <div name="data">data2</div>
+    <div name="data">data3</div>
+
+    <p>The tag name of the first element with the name "fname" is:</p>
+    <div>
+        <h3>Tag Input</h3>
+        <div>
+            dataInputType : <span id="dataInputType"></span>
+        </div>
+        <div>
+            dataInputValue : <span id="dataInputValue"></span>
+        </div>
+        <div>
+            dataInputTagName : <span id="dataInputTagName"></span>
+        </div>
+        <div>
+            dataInputId : <span id="dataInputId"></span>
+        </div>
+        <div>
+            dataInputClass : <span id="dataInputClass"></span>
+        </div>
+        <div>
+            dataInputMaxlength : <span id="dataInputMaxlength"></span>
+        </div>
+        <div>
+            getLength : <span id="getLength"></span>
+        </div>
+        <div>
+            tagDiv : <span id="data"></span>
+        </div>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let elements = document.getElementsByName("fname");
+
+    let dataInputType = document.getElementById("dataInputType");
+    dataInputType.innerHTML = elements[0].type;
+    dataInputType.style.backgroundColor = "yellow";
+
+    let dataInputValue = document.getElementById("dataInputValue");
+    dataInputValue.innerHTML = elements[0].value;
+    dataInputValue.style.backgroundColor = "yellow";
+
+    let dataInputTagName = document.getElementById("dataInputTagName");
+    dataInputTagName.innerHTML = elements[0].tagName;
+    dataInputTagName.style.backgroundColor = "yellow";
+
+    let dataInputId = document.getElementById("dataInputId");
+    dataInputId.innerHTML = elements[0].id;
+    dataInputId.style.backgroundColor = "yellow";
+
+    let dataInputClass = document.getElementById("dataInputClass");
+    dataInputClass.innerHTML = elements[0].className;
+    dataInputClass.style.backgroundColor = "yellow";
+
+    let dataInputMaxlength = document.getElementById("dataInputMaxlength");
+    dataInputMaxlength.innerHTML = elements[0].maxLength;
+    dataInputMaxlength.style.backgroundColor = "yellow";
+
+    let num = document.getElementsByName("fname").length;
+    let getLength = document.getElementById("getLength");
+    getLength.innerHTML = num;
+    getLength.style.backgroundColor = "yellow";
+    
+    let divElements = document.getElementsByName("data");
+    // console.log(divElements);
+    let data = document.getElementById("data");
+    data.innerHTML = divElements[0].tagName;
+    data.style.backgroundColor = "yellow";
+
+    const collection = document.getElementsByName("fname");
+    for (let i = 0; i < collection.length; i++) {
+        if (collection[i].type == "checkbox") {
+            collection[i].checked = true;
+        }    
+    }
+}
+
+let fname = () => {
+    console.log("BERHASIL KLIK");
+}
+</script>
+</body>
+</html>

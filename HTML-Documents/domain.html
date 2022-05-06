@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The domain Property</h2>
+
+<div><hr>
+    <p>The domain name of the server this document was loaded from:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let myDomain = document.domain;
+    document.getElementById("getExampleOne").innerHTML = myDomain;
+}
+</script>
+</body>
+</html>

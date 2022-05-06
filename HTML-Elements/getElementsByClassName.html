@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+    border: 1px solid black;
+    padding: 16px;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The getElementsByClassName() Method</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Change</button>
+    <p>Click "Change" to change the text of the first list item:</p>
+    <ul class="listExampleOne">
+        <li class="child">Coffee</li>
+        <li class="child">Tea</li>
+    </ul>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Change</button>
+    <div id="listExampleTwo">
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+    </div>
+    <p>The number of elements with class "child" are:</p>
+    <p id="getExampleTwo" style="background-color: yellow"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Change</button>
+    <p>Click "Change" to change the size of the second paragraph with class="child":</p>
+    <div id="listExampleThree">
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Change</button>
+    <p>Click "Change" to change the size of the first paragraph with classes "child" and "color" inside the second div element with class="example".</p>
+    <div id="listExampleFour">
+        <div class="example">
+            <p class="child">I am a paragraph.</p>
+        </div>
+        <div class="example">
+            <p class="child color">I am a paragraph.</p>
+            <p class="child color">I am a paragraph.</p>
+        </div>
+        <div class="example">
+            <p class="child color">I am a paragraph.</p>
+            <p class="child color">I am a paragraph.</p>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFive()">Change</button>
+    <p>Click "Change" to change the color of all elements with class="child":</p>
+    <div id="listExampleFive">
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+        <p class="child">I am a paragraph.</p>
+        <p>I am a paragraph <span class="child">with a span element</span>.</p>
+    </div>
+</div><hr>
+
+<script>
+// Change the text of the first list item with class="child":
+let getExampleOne = () => {
+    const list = document.getElementsByClassName("listExampleOne")[0];
+    let child = list.getElementsByClassName("child")[0];
+    child.innerHTML = "Milk";
+    child.style.backgroundColor = "yellow";
+}
+
+// Number of elements with class="child" in "myDIV":
+let getExampleTwo = () => {
+    const element = document.getElementById("listExampleTwo"); 
+    const nodes = element.getElementsByClassName("child");
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = nodes.length;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Change the size of the second element with class="child":
+let getExampleThree = () => {
+    const element = document.getElementById("listExampleThree");
+    element.getElementsByClassName("child")[1].style.fontSize = "24px";
+    element.getElementsByClassName("child")[1].style.backgroundColor = "yellow";
+}
+
+// Change the size of the first element with "child" and "color" classes inside the second element with class="example":
+let getExampleFour = () => {
+    let getExampleFour = document.querySelectorAll("#listExampleFour")[0].children;
+    let child = getExampleFour[2].querySelectorAll(".child")[1];
+    child.style.backgroundColor = "yellow";
+    child.style.fontSize = "24px";
+}
+
+// Change the color of all elements in "myDIV" with class="child":
+let getExampleFive = () => {
+    const element = document.getElementById("listExampleFive");
+    let nodes = element.getElementsByClassName("child");
+    for (let i = 0; i < nodes.length; i++) {
+        nodes[i].style.color = "red";
+    }
+}
+</script>
+</body>
+</html>

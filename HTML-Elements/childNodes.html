@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The childNodes Property</h2>
+<p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+<div><hr>
+    <p>The body element's child nodes are:</p>
+    <button onclick="getExampleOne()">Append</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleTwo" style="background:coral; padding:16px;">
+        <p>First p element (index 1)</p>
+        <p>Second p element (index 3)</p>
+    </div>
+    <button onclick="getExampleTwo()">Append</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleThree" style="background:coral; padding:16px;">
+        <p>First p element (index 1)</p>
+        <p>Second p element (index 3)</p>
+    </div>
+    <button onclick="getExampleThree()">Append</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+// Get the <body> element's child nodes:
+let getExampleOne = () => {
+    const nodeList = document.body.childNodes;
+    let text = "";
+    for (let i = 0; i < nodeList.length; i++) {
+        text += nodeList[i].nodeName + "<br>";
+    }
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Get the number of child nodes in "myDIV":
+let getExampleTwo = () => {
+    let numb = document.getElementById("listExampleTwo").childNodes.length;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = numb;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Change the background color of the second child node:
+let getExampleThree = () => {
+    let getExampleThree = document.getElementById("listExampleThree");
+    getExampleThree.childNodes[1].style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

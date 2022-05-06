@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The images Property</h2>
+
+<img src="klematis.jpg" alt="flower" width="150" height="113">
+<img src="klematis2.jpg" alt="flower" width="152" height="128">
+<img src="smiley.gif" alt="Smiley face" width="42" height="42">
+
+<p>The number of images is:</p>
+<div><hr>
+    <button onclick="numb()">Click</button>
+    <p id="numb"></p>
+</div><hr>
+<div><hr>
+    <button onclick="myImages()">Click</button>
+    <p id="myImages"></p>
+</div><hr>
+<div><hr>
+    <button onclick="src()">Click</button>
+    <p id="src"></p>
+</div><hr>
+<div><hr>
+    <button onclick="srcImg()">Click</button>
+    <p id="srcImg"></p>
+</div><hr>
+<div><hr>
+    <button onclick="img()">Click</button>
+    <p id="img"></p>
+</div><hr>
+
+<script>
+// The number of <img> elements in the document:
+let numb = () => {
+    let numb = document.images.length;
+    document.getElementById("numb").innerHTML = numb;
+}
+
+// Loop over all <img> elements, and output the URL (src) of each:
+let myImages = () => {
+    const myImages = document.images;
+    let text = "";
+    for (let i = 0; i < myImages.length; i++) {
+        text +=  myImages[i].src + "<br>";
+    }
+    document.getElementById("myImages").innerHTML = text;
+}
+
+// The URL of the first <img> element is:
+let src = () => {
+    let src = document.images[0].src;
+    document.getElementById("src").innerHTML = src;
+}
+
+let srcImg = () => {
+    let srcImg = document.images.item(0).src;
+    document.getElementById("srcImg").innerHTML = srcImg;
+}
+
+// The URL of the first <img> element is:
+let img = () => {
+    const img = document.images[0];
+    img.style.border = "2px solid black";
+}
+</script>
+</body>
+</html>

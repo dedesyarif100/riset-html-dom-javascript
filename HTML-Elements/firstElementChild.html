@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The firstElementChild Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <ul id="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p>The HTML content of the list's first child is:</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <div id="listExampleTwo">
+        <p>A P element - First child in "myDIV"</p>
+        <span>A Span element - Last child in "myDIV"</span>
+    </div>
+    <p>The tag name of the first child element in "myDIV" is:</p>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Click</button>
+    <select id="listExampleThree" size="4">
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Saab</option>
+        <option>Volvo</option>
+    </select>
+    <p>The text of the first child element of the select element is:</p>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let text = document.getElementById("listExampleOne").firstElementChild.innerHTML;
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    let name = document.getElementById("listExampleTwo").firstElementChild.tagName;
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = name;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+let getExampleThree = () => {
+    let dataSelect = document.getElementById("listExampleThree").firstElementChild.text;
+    let getExampleThree = document.getElementById("getExampleThree");
+    getExampleThree.innerHTML = dataSelect;
+    getExampleThree.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

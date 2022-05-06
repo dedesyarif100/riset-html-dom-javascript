@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The isDefaultNamespace Property</h2>
+
+<div><hr>
+    <p>Is the specified namespace default is true</p>
+    <button onclick="getExampleOne()">True</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>Is the specified namespace default is false</p>
+    <button onclick="getExampleTwo()">False</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.documentElement;
+    let answer = element.isDefaultNamespace("http://www.w3.org/1999/xhtml"); 
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = answer;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const element = document.documentElement;
+    let answer = element.isDefaultNamespace("http://www.youtube.com/"); 
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = answer;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

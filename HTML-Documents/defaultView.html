@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The defaultView Property</h2>
+
+<div><hr>
+    <p>The defaultView property returns the current window object:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne" class="getExampleOne">
+        Width : <span class="width"></span><br>
+        Height : <span class="height"></span>
+    </p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const view = document.defaultView;
+    console.log(view);
+    let data = document.querySelector(".getExampleOne");
+    let width = data.querySelector(".width");
+    let height = data.querySelector(".height");
+    width.innerHTML = view.innerWidth;
+    height.innerHTML = view.innerHeight;
+    width.style.backgroundColor = "yellow";
+    height.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

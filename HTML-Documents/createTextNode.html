@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The createTextNode() Method</h2>
+
+<div><hr>
+    <p>Create a text node:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>Create a text node:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <p>Create a text node:</p>
+    <button onclick="getExampleThree()">Click</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<div><hr>
+    <p>Create a text node:</p>
+    <button onclick="getExampleFour()">Click</button>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let data = document.getElementById("getExampleOne");
+    const textNode = document.createTextNode("Hello World > ");
+    // document.body.appendChild(textNode);
+    data.appendChild(textNode);
+}
+
+// create textnode h1 element
+let getExampleTwo = () => {
+    let data = document.getElementById("getExampleTwo");
+    const h1 = document.createElement("h1");
+    const textNodeForH1 = document.createTextNode("NEW ELEMENT H1");
+    h1.appendChild(textNodeForH1);
+    // document.body.appendChild(h1);
+    data.appendChild(h1);
+}
+
+// create textnode h1 element
+let getExampleThree = () => {
+    let data = document.getElementById("getExampleThree");
+    const h2 = document.createElement("h2");
+    const textNodeForH2 = document.createTextNode("NEW ELEMENT H2");
+    h2.appendChild(textNodeForH2);
+    // document.body.appendChild(h2);
+    data.appendChild(h2);
+}
+
+// create textnode span element
+let getExampleFour = () => {
+    let data = document.getElementById("getExampleFour");
+    const span = document.createElement("span");
+    const textNodeForSpan = document.createTextNode("NEW ELEMENT SPAN > ");
+    span.appendChild(textNodeForSpan);
+    // document.body.appendChild(span);
+    data.appendChild(span);
+}
+</script>
+</body>
+</html>

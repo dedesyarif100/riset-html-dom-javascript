@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The childNodes Property</h2>
+<p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+<div><hr>
+    <p>The body element's child nodes are:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes are:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <p>The body element's child nodes are:</p>
+    <button onclick="getExampleThree()">Click</button>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<div><hr>
+    <p class="getExampleFour">I am one.</p>
+    <p class="getExampleFour">I am two.</p>
+    <p class="getExampleFour">I am three.</p>
+    <p>The HTML content of the first p element in this document is:</p>
+    <button onclick="getExampleFour()">Click</button>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<div><hr>
+    <div id="listExampleFive" style="border:1px solid black; padding:16px;">
+        <p>I am one.</p>
+        <p>I am two.</p>
+        <p>I am three.</p>
+    </div>
+    <p>The HTML content of the first p element in this document is:</p>
+    <button onclick="getExampleFive()">Click</button>
+    <p id="getExampleFive"></p>
+</div><hr>
+
+<div><hr>
+    <p>Click "Change" to change the color of all elements with class="child".</p>
+    <button onclick="getExampleSix()">Change</button>
+    <p class="child">A p element with class="child".</p>
+    <p class="child">A p element with class="child".</p>
+    <p>A p element with a <span class="child">span with class="child"</span>.</p>
+</div><hr>
+
+<script>
+// Get the <body> element's child nodes:
+let getExampleOne = () => {
+    const nodeList = document.body.childNodes;
+    let text = "";
+    for (let i = 0; i < nodeList.length; i++) {
+        text += nodeList[i].nodeName + "<br>";
+    }
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = text
+    data.style.backgroundColor = "yellow";
+}
+
+// Get the node name of the first child node:
+let getExampleTwo = () => {
+    const list = document.body.childNodes;
+    let name = list.item(3).nodeName;
+    let data = document.getElementById("getExampleTwo");
+    data.innerHTML = name;
+    data.style.backgroundColor = "yellow";
+}
+
+// This produces the same result:
+let getExampleThree = () => {
+    const list = document.body.childNodes;
+    let name = list[3].nodeName;
+    let data = document.getElementById("getExampleThree");
+    data.innerHTML = name;
+    data.style.backgroundColor = "yellow";
+}
+
+// Get the HTML content of the first <p> element in the document:
+let getExampleFour = () => {
+    const list = document.querySelectorAll(".getExampleFour");
+    console.log(list);
+    let text = list.item(0).innerHTML;
+    let data = document.getElementById("getExampleFour");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+// Get the HTML content of the first <p> element inside "myDIV":
+let getExampleFive = () => {
+    const div = document.getElementById("listExampleFive");
+    const list = div.getElementsByTagName("p");
+    let text = list[0].innerHTML;
+    let data = document.getElementById("getExampleFive");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+
+// Change the color of all elements with class="child":
+let getExampleSix = () => {
+    const list = document.querySelectorAll(".child");
+    for (let i = 0; i < list.length; i++) {
+        list[i].style.color = "red";
+    }
+}
+</script>
+</body>
+</html>

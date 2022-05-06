@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The createElement() Method</h2>
+
+<div><hr>
+    <p>Create a p element with some text:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <div id="getExampleOne" style="padding:16px;background-color:lightgray">
+        <h3>A DIV ELEMENT</h3>
+    </div>
+</div><hr>
+
+<div><hr>
+    <p>Create a p element with some text:</p>
+    <button onclick="getExampleTwo()">Click</button>
+    <div id="getExampleTwo" style="padding:16px;background-color:lightgray">
+        <h3>A DIV ELEMENT</h3>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const elementP = document.createElement("p");
+    elementP.innerHTML = "THIS IS P ELEMENT";
+    document.getElementById("getExampleOne").appendChild(elementP);
+}
+
+let getExampleTwo = () => {
+    // Create element:
+    const para = document.createElement("p");
+    para.innerText = "This is a paragraph.";
+    const elementH1 = document.createElement("h1");
+    elementH1.innerText = "THIS IS H1 ELEMENT";
+    // Append to body:
+    document.body.appendChild(para);
+    document.body.appendChild(elementH1);
+    
+    const btn = document.createElement("button");
+    btn.innerHTML = "Hello Button";
+    document.body.appendChild(btn);
+}
+</script>
+</body>
+</html>

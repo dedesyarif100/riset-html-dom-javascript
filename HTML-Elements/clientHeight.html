@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+#listExampleOne {
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+    margin: 15px;
+    border: 5px solid red;
+    background-color: lightblue;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The clientHeight and clientWidth Properties</h2>
+
+<div><hr>
+    <div id="listExampleOne">
+        <b>Information about myDIV:</b><br>
+        Height: 250px<br>
+        Width: 400px<br>
+        Padding: 10px<br>
+        Margin: 15px<br>
+        Border: 5px<br><hr>
+        <p id="getExampleOne"></p>
+    </div>
+	<button onclick="getExampleOne()">Try it</button>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.getElementById("listExampleOne");
+    let text = "clientHeight: " + element.clientHeight + "px<br>";
+    text += "clientWidth: " + element.clientWidth + "px<br>";
+    text += "offsetHeight: " + element.offsetHeight + "px<br>";
+    text += "offsetWidth: " + element.offsetWidth + "px";
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = text;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body onclick="triggerFromBody(event)">
+<h1>The Element Object</h1>
+<h2>The tagName Property</h2>
+
+<div><hr>
+    <p><span>This is span element.</span></p>
+    <p>The tag name of the "demo" element is:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let name = document.getElementById("getExampleOne").tagName;
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = name;
+    data.style.backgroundColor = "yellow";
+}
+
+let triggerFromBody = (event) => {
+    const element = event.target;
+    let data = document.getElementById("getExampleOne"); 
+    data.innerHTML = `Triggered by ${element.tagName}`;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

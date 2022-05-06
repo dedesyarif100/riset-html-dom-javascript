@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+
+<div><hr>
+    <button onclick="getExampleOne()">Change</button>
+    <p>Click "Change" to change the first h2 header to a h3.</p>
+    <div id="listExampleOne">
+        <h2>The outerHTML Property</h2>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Change</button>
+    <p id="listExampleTwo">I am a paragraph! Click "Change" to replace me with a header.</p>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Alert</button>
+    <p id="listExampleThree">Click "Alert" to alert the outer HTML of the h1 element.</p>
+    <p id="getExampleThree"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Alert</button>
+    <p>Click "Alert" to alert the outer HTML content of the ul element.</p>
+    <ul id="listExampleFour">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne");
+    let element = listExampleOne.getElementsByTagName("h2")[0];
+    if (element !== undefined) {
+        element.outerHTML = "<h3 id='resultExampleOne'>You changed me and my content!</h3>";
+        let data = document.getElementById("resultExampleOne");
+        data.style.backgroundColor = "yellow";
+    }
+}
+
+let getExampleTwo = () => {
+    const element = document.querySelector("#listExampleTwo");
+    element.outerHTML = "<h2 id='resultExampleTwo'>This is a h2 element.</h2>";
+    let getExampleTwo = document.querySelector("#getExampleTwo");
+    getExampleTwo.innerHTML = element.outerHTML;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+let getExampleThree = () => {
+    let listExampleThree = document.querySelector("p[id='listExampleThree']").outerHTML;
+    let getExampleThree = document.querySelector("#getExampleThree");
+    getExampleThree.innerHTML = listExampleThree;
+    getExampleThree.style.backgroundColor = "yellow";
+}
+
+let getExampleFour = () => {
+    let listExampleFour = document.getElementById("listExampleFour").outerHTML;
+    let getExampleFour = document.querySelector("#getExampleFour");
+    getExampleFour.innerHTML = listExampleFour;
+    getExampleFour.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

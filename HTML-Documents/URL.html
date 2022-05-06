@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Window Document Object</h1>
+
+<div><hr>
+    <h2>The URL Property</h2>
+    <p id="demo"></p>
+    <button onclick="getExampleOne()">Click</button>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let url = document.URL;
+    let demo = document.getElementById("demo");
+    demo.innerHTML = url;
+    demo.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

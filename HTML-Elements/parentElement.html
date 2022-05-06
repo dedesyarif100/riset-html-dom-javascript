@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#getExampleTwo {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    background-color: red;
+    color: #fff;
+}
+.closebtn {
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.closebtn:hover {
+    color: #000;
+}
+</style>
+</head>
+<body>
+<p>Example list:</p>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p>Click the button to get the node name of the parent element of the li element in the list.</p>
+    <ul>
+        <li id="listExampleOne">Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <div id="getExampleTwo"><hr>
+        <span onclick="this.parentElement.style.display = 'none';" class="closebtn">&times;</span>
+        <p>To close this container, click on the X symbol to the right.</p>
+    </div>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let listExampleOne = document.querySelector("#listExampleOne").parentElement.nodeName;
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = listExampleOne;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

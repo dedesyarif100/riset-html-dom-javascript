@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The addEventListener() Method</h2>
+
+<div id="getExampleOne"><hr>
+	<p>Click anywhere in the document to display "Hello World!".</p>
+	<p id="listExampleOne">
+</div><hr>
+
+<div onclick="getExampleTwo()"><hr>
+	<p>Click anywhere in the document to display "Hello World!".</p>
+	<p id="listExampleTwo">
+</div><hr>
+
+<div class="getExampleThree"><hr>
+	<p>Click anywhere in the document to display "Hello World!".</p>
+	<ul>
+		<ol>One</ol>
+		<ol>Two</ol>
+		<ol>Three</ol>
+	</ul>
+</div><hr>
+
+<script>
+let getExampleOne = document.querySelector("#getExampleOne");
+getExampleOne.addEventListener("click", functionGetExampleOne);
+function functionGetExampleOne() {
+	getExampleOne.querySelector("#listExampleOne").innerHTML = "HELLO WORLD";
+}
+
+let getExampleTwo = () => {
+	document.querySelector("#listExampleTwo").innerHTML = "HELLO WORLD";
+}
+
+let getExampleThree = document.querySelector("div.getExampleThree");
+getExampleThree.addEventListener("click", functionGetExampleThree);
+function functionGetExampleThree() {
+	let ul = getExampleThree.querySelectorAll("ul")[0].children;
+	for (const key of ul) {
+		key.innerHTML += ` - ${key.textContent}`;
+	}
+}
+
+// -------------------------------------------------------
+// document.addEventListener("click", myFunction);
+// function myFunction() {
+//     document.getElementById("demo").innerHTML = "Hello World";
+// }
+// // -------------------------------------------------------
+
+// // -------------------------------------------------------
+// document.addEventListener("click", function() {
+//     document.getElementById("demo").innerHTML = "Hello World!";
+// });
+// // -------------------------------------------------------
+
+// // -------------------------------------------------------
+// document.addEventListener("mouseover", eventMouseOver);
+// document.addEventListener("click", eventClick);
+// document.addEventListener("mouseout", eventMouseOut);
+
+// function eventMouseOver() {
+//   	document.getElementById("demo").innerHTML = "Moused over!"
+// }
+
+// function eventClick() {
+//   	document.getElementById("demo").innerHTML = "Clicked!<br>"
+// }
+
+// function eventMouseOut() {
+//   	document.getElementById("demo").innerHTML = "Moused out!<br>"
+// }
+// -------------------------------------------------------
+</script>
+</body>
+</html>

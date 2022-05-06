@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The links Property</h2>
+
+<div><hr>
+    showHideAllUrl :
+    <button onclick="showAllUrl()">showAllUrl</button>
+    <button onclick="hideAllUrl()">hideAllUrl</button>
+</div><hr>
+
+<div><hr>
+    HTML : 
+    <button onclick="eventHTML()">Click</button>
+    <p><a id="html" href="/html/default.asp">HTML Tutorial</a></p>
+    <div id="namedItemHtml" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    CSS :
+    <button onclick="eventCss()">Click</button>
+    <p><a id="css" href="/css/default.asp">CSS Tutorial</a></p>
+    <div id="namedItemCss" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    JAVASCRIPT :
+    <button onclick="eventJavascript()">Click</button>
+    <p><a id="javascript" href="/javascript/default.asp">Javascript Tutorial</a></p>
+    <div id="namedItemJavascript" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    PHP :
+    <button onclick="eventPhp()">Click</button>
+    <p><a id="php" href="/php/default.asp">PHP Tutorial</a></p>
+    <div id="namedItemPhp" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    MYSQL :
+    <button onclick="eventMysql()">Click</button>
+    <p><a id="mysql" href="/mysql/default.asp">MYSQL Tutorial</a></p>
+    <div id="namedItemMysql" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    JQUERY :
+    <button onclick="eventJquery()">Click</button>
+    <p><a id="jquery" href="/jquery/default.asp">JQUERY Tutorial</a></p>
+    <div id="namedItemJquery" class="urlNamedItem"></div>
+</div><hr>
+
+<div><hr>
+    <p>The number of links in the document is:</p>
+    <button onclick="numb()">Click</button>
+    <p id="numb"></p>
+</div><hr>
+
+<div><hr>
+    <p>The number of links in the document is:</p>
+    <button onclick="url()">Click</button>
+    <p id="url"></p>
+</div><hr>
+
+<div><hr>
+    <h3>All URL :</h3>
+    <button onclick="getLinks()">Links</button>
+    <p id="links"></p>
+</div><hr>
+
+
+<script>
+// Get the URL of the element with id="myLink":
+let eventHTML = () => {
+    const urlNamedItemHtml = document.links.namedItem("html").href;
+    console.log(document.links.namedItem("html"));
+    let data = document.getElementById("namedItemHtml");
+    data.innerHTML = urlNamedItemHtml;
+    data.style.backgroundColor = "yellow";
+}
+
+let eventCss = () => {
+    const urlNamedItemCss = document.links.namedItem("css").href;
+    let data = document.getElementById("namedItemCss");
+    data.innerHTML = urlNamedItemCss;
+    data.style.backgroundColor = "yellow";
+}
+
+let eventJavascript = () => {
+    const urlNamedItemJavascript = document.links.namedItem("javascript").href;
+    let data = document.getElementById("namedItemJavascript");
+    data.innerHTML = urlNamedItemJavascript;
+    data.style.backgroundColor = "yellow";
+}
+
+let eventPhp = () => {
+    const urlNamedItemPhp = document.links.namedItem("php").href;
+    let data = document.getElementById("namedItemPhp");
+    data.innerHTML = urlNamedItemPhp;
+    data.style.backgroundColor = "yellow";
+}
+
+let eventMysql = () => {
+    const urlNamedItemMysql = document.links.namedItem("mysql").href;
+    let data = document.getElementById("namedItemMysql");
+    data.innerHTML = urlNamedItemMysql;
+    data.style.backgroundColor = "yellow";
+}
+
+let eventJquery = () => {
+    const urlNamedItemJquery = document.links.namedItem("jquery").href;
+    let data = document.getElementById("namedItemJquery");
+    data.innerHTML = urlNamedItemJquery;
+    data.style.backgroundColor = "yellow";
+}
+
+let showAllUrl = () => {
+    const urlNamedItem = document.querySelectorAll(".urlNamedItem");
+    const allUrlLinks = document.querySelectorAll("a[href]");
+    for (let i = 0; i < urlNamedItem.length; i++) {
+        urlNamedItem[i].innerHTML = allUrlLinks[i].href
+        urlNamedItem[i].style.backgroundColor = "yellow";
+    }
+    // Add a red border to the first link in the document:
+    // document.links[1].style.border = "2px solid red";
+}
+
+let numb = () => {
+    // Number of links in the document:
+    let numb = document.links.length;
+    let data = document.getElementById("numb");
+    data.innerHTML = numb;
+    data.style.backgroundColor = "yellow";
+}
+
+let url = () => {
+    // Get the URL of the first link in the document:
+    let url = document.links[0].href;
+    // let url = document.links.item(0).href;
+    let data = document.getElementById("url");
+    data.innerHTML = url;
+    data.style.backgroundColor = "yellow";
+}
+
+let hideAllUrl = () => {
+    const urlNamedItem = document.querySelectorAll(".urlNamedItem");
+    // const allUrlLinks = document.querySelectorAll("a[href]");
+    for (let i = 0; i < urlNamedItem.length; i++) {
+        urlNamedItem[i].innerHTML = "";
+    }
+}
+
+// Loop over all links and output the URL (href) of each:
+let getLinks = () => {
+    const links = document.links;
+    let text = "";
+    for (let i = 0; i < links.length; i++) {
+        text += links[i].href + "<br>";    
+    }
+    let link = document.getElementById("links");
+    link.innerHTML = text;
+    link.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

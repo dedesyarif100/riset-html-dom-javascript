@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The open() Method</h2>
+
+<div><hr>
+    <p>Open a document deletes existing content.</p>
+    <p>Open this document and write some text to it:</p>
+    <button onclick="myFunction()">Try it</button>
+    <button onclick="newWindow()">New Window</button>
+    <button onclick="writeWindow()">Write Window</button>
+</div><hr>
+
+<script>
+let myFunction = () => {
+    document.open();
+    document.write("<h1>Hello World</h1>");
+    document.close();
+}
+
+let newWindow = function() {
+    const myWindow = window.open();
+    myWindow.document.open();
+    myWindow.document.write("<h1>Hello World!</h1>");
+}
+
+let writeWindow = () => {
+    document.write("<h1>HELLO WORLD</h1>");
+}
+</script>
+</body>
+</html>

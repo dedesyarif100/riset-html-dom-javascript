@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The nodeValue Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try It</button>
+    <p>The node value of the first button element is:</p>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <p>Node name, type and value of "myDIV"s first child is:</p>
+    <div id="listExampleTwo">This is "myDIV".</div>
+    <p id="getExampleTwo"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    const element = document.getElementsByTagName("BUTTON")[0];
+    let value = element.childNodes[0].nodeValue;  
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = value;
+    data.style.backgroundColor = "yellow";
+}
+
+let getExampleTwo = () => {
+    const listExampleTwo = document.getElementById("listExampleTwo").firstChild;
+    let text = "";
+    text += "Name: " + listExampleTwo.nodeName + "<br>";
+    text += "Value: " + listExampleTwo.nodeValue + "<br>";
+    text += "Type: " + listExampleTwo.nodeType;
+    let data = document.getElementById("getExampleTwo");
+    data.innerHTML = text;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

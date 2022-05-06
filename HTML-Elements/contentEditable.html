@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The contentEditable Property</h2>
+
+<div><hr>
+    <p id="listExampleOne" contenteditable="true">Try to change this text.</p>
+    <button onclick="getExampleOne(this);">Disable "myP" to be editable!</button>
+</div><hr>
+
+<script>
+let getExampleOne = (button) => {
+    const x = document.getElementById("listExampleOne");
+    console.log(x.contentEditable);
+    if (x.contentEditable == "true") {
+        x.contentEditable = "false";
+        button.innerHTML = 'Enable "myP" p to be editable!';
+    } else {
+        x.contentEditable = "true";
+        button.innerHTML = 'Disable "myP" to be editable!';
+    }
+}
+</script>
+</body>
+</html>

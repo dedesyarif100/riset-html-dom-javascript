@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The insertAdjacentElement() Method</h2>
+
+<div><hr>
+    <button onclick="afterend(event)">Move</button>
+    <p>Click "Move" to insert the red span after the header.</p>
+    <span id="spanExampleOne" style="color:red">My span</span>
+    <h2 id="h2ExampleOne">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="afterbegin()">Move</button>
+    <p>Click "Move" to insert the red span inside the header.</p>
+    <span id="spanExampleTwo" style="color:red">My span</span>
+    <h2 id="h2ExampleTwo">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="beforebegin()">Move</button>
+    <p>Click "Move" to insert the red span before the header:</p>
+    <h2 id="spanExampleThree">My Header</h2>
+    <p><span style="color:red">My span</span></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="beforeend()">Move</button>
+    <p>Click "Move" to insert the red span inside the header.</p>
+    <span id="spanExampleFour" style="color:red">My span</span>
+    <h2 id="h2ExampleFour">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="toogleUnderTop(event)">Move</button>
+    <p>Click "Move" to insert the red span after the header.</p>
+    <div id="toogleUnderTop">
+        <span id="spanToogleUnderTop" style="color:red">My span</span>
+        <h2 id="h2ToogleUnderTop">My Header</h2>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="toogleTopToLeft(event)">Move</button>
+    <p>Click "Move" to insert the red span after the header.</p>
+    <div id="toogleTopToLeft">
+        <span id="spanToogleTopToLeft" style="color: red;">My Span</span>
+        <h2 id="h2ToogleTopToLeft">My Header</h2>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="toogleBottomToLeft(event)">Move</button>
+    <p>Click "Move" to insert the red span after the header.</p>
+    <div id="toogleBottomToLeft">
+        <span id="spanToogleBottomToLeft" style="color: red;">My Span</span>
+        <h2 id="h2ToogleBottomToLeft">My Header</h2>
+    </div>
+</div><hr>
+
+<script>
+let afterend = (event) => {
+    const spanExampleOne = document.getElementById("spanExampleOne");
+    const h2ExampleOne = document.getElementById("h2ExampleOne");
+    h2ExampleOne.insertAdjacentElement("afterend", spanExampleOne);
+}
+
+let afterbegin = () => {
+    const spanExampleTwo = document.getElementById("spanExampleTwo");
+    const h2ExampleTwo = document.getElementById("h2ExampleTwo");
+    h2ExampleTwo.insertAdjacentElement("afterbegin", spanExampleTwo);
+}
+
+let beforebegin = () => {
+    const span = document.getElementsByTagName("span")[2];
+    const spanExampleThree = document.getElementById("spanExampleThree");
+    spanExampleThree.insertAdjacentElement("beforebegin", span);
+}
+
+let beforeend = () => {
+    const spanExampleFour = document.getElementById("spanExampleFour");
+    const h2ExampleFour = document.getElementById("h2ExampleFour");
+    h2ExampleFour.insertAdjacentElement("beforeend", spanExampleFour);
+}
+
+let toogleUnderTop = () => {
+    const spanToogleUnderTop = document.getElementById("spanToogleUnderTop");
+    const h2ToogleUnderTop = document.getElementById("h2ToogleUnderTop");
+    const toogleUnderTop = document.querySelectorAll("#toogleUnderTop");
+    if ( toogleUnderTop[0].children[0].id === spanToogleUnderTop.id ) {
+        h2ToogleUnderTop.insertAdjacentElement("afterend", spanToogleUnderTop);
+    } else {
+        h2ToogleUnderTop.insertAdjacentElement("beforebegin", spanToogleUnderTop);
+    }
+}
+
+let toogleTopToLeft = () => {
+    const spanToogleTopToLeft = document.getElementById("spanToogleTopToLeft");
+    const h2ToogleTopToLeft = document.getElementById("h2ToogleTopToLeft");
+    const toogleTopToLeft = document.querySelectorAll("#toogleTopToLeft");
+    if ( toogleTopToLeft[0].children[0].id === spanToogleTopToLeft.id ) {
+        h2ToogleTopToLeft.insertAdjacentElement("afterbegin", spanToogleTopToLeft);
+    } else {
+        h2ToogleTopToLeft.insertAdjacentElement("beforebegin", spanToogleTopToLeft);
+    }
+}
+
+let toogleBottomToLeft = () => {
+    const spanToogleBottomToLeft = document.getElementById("spanToogleBottomToLeft");
+    const h2ToogleBottomToLeft = document.getElementById("h2ToogleBottomToLeft");
+    const toogleBottomToLeft = document.querySelectorAll("#toogleBottomToLeft");
+    if ( toogleBottomToLeft[0].children[0].id === spanToogleBottomToLeft.id ) {
+        h2ToogleBottomToLeft.insertAdjacentElement("beforeend", spanToogleBottomToLeft);
+    } else {
+        h2ToogleBottomToLeft.insertAdjacentElement("beforebegin", spanToogleBottomToLeft);
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The previousSibling Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p>The HTML content of the previous sibling of the second list item is:</p>
+    <ul><li id="item1">Coffee (first item)</li><li id="item2">Tea (second item)</li></ul>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let item = document.querySelector("#item2").previousSibling.innerHTML; 
+    let getExampleOne = document.querySelector("#getExampleOne");
+    getExampleOne.innerHTML = item;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

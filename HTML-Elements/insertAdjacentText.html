@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The insertAdjacentText() Method</h2>
+
+<div><hr>
+    <button onclick="afterend()">Insert</button>
+    <p>Click "insert" to insert some text after the header:</p>
+    <h2 id="h2AfterEnd">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="afterbegin()">Insert</button>
+    <p>Click "insert" to insert some text inside the header:</p>
+    <h2 id="h2AfterBegin">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <button onclick="beforebegin()">Insert</button>
+    <p>Click "insert" to insert some text before the header:</p>
+    <h2 id="h2BeforeBegin">My Header</h2>
+</div><hr>
+
+<div><hr>
+    <p>Click "insert" to insert some text inside the header:</p>
+    <button onclick="beforeend()">Insert</button>
+    <h2 id="h2BeforeEnd">My Header</h2>
+</div><hr>
+
+<script>
+// Insert text after a header element:
+let afterend = () => {
+    const h2 = document.getElementById("h2AfterEnd");
+    let text = "My inserted text > ";
+    h2.insertAdjacentText("afterend", text);
+}
+
+// Using "afterbegin":
+let afterbegin = () => {
+    const h2 = document.getElementById("h2AfterBegin");
+    let text = " > My inserted text |";
+    h2.insertAdjacentText("afterbegin", text);
+}
+
+// Using "beforebegin":
+let beforebegin = () => {
+    const h2 = document.getElementById("h2BeforeBegin");
+    let text = "My inserted text > ";
+    h2.insertAdjacentText("beforebegin", text);
+}
+
+// Using "beforeend":
+let beforeend = () => {
+    const h2 = document.getElementById("h2BeforeEnd");
+    let text = " | My inserted text > ";
+    h2.insertAdjacentText("beforeend", text);
+}
+</script>
+</body>
+</html>

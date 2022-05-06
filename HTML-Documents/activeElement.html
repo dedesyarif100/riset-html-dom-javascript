@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<!-- <body onclick="myFunction()"> -->
+<body>
+<h1>The Document Object</h1>
+<h2>The activeElement Property</h2>
+
+<div><hr>
+    <input type="button" class="class-button" id="id-button" value="Save" onclick="getInputTypeButton()">
+    <div id="form-input-button">
+        <div>
+            Tag : <span id="tag"></span>
+        </div>
+        <div>
+            Type : <span id="type"></span>
+        </div>
+        <div>
+            className : <span id="className"></span>
+        </div>
+        <div>
+            ClassList : <span id="classList"></span>
+        </div>
+        <div>
+            idName : <span id="idName"></span>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button id="tag-button" class="tag-button" onclick="getInputTagButton()">A Button</button>
+    <div id="form-tag-button">
+        <div>
+            Tag : <span id="tag"></span>
+        </div>
+        <div>
+            Type : <span id="type"></span>
+        </div>
+        <div>
+            className : <span id="className"></span>
+        </div>
+        <div>
+            ClassList : <span id="classList"></span>
+        </div>
+        <div>
+            idName : <span id="idName"></span>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <div class="container" style="cursor: pointer;" onclick="container()">
+        <span class="span1"></span>
+        <span class="span2"></span>
+        tes div
+    </div>
+    <input type="text" class="form-input" id="id-input" value="An input field" min="5" max="10" onclick="getInputTypeText()">
+    <p>Click anywhere in the document to display the active element:</p>
+    <div id="form-tag-input">
+        <div>
+            Tag : <span id="tag"></span>
+        </div>
+        <div>
+            Type : <span id="type"></span>
+        </div>
+        <div>
+            className : <span id="className"></span>
+        </div>
+        <div>
+            idName : <span id="idName"></span>
+        </div>
+        <div>
+            ClassList : <span id="classList"></span>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <input type="password" class="class-password" id="id-password" value="1234" onclick="getInputTypePassword()">
+    <div id="form-input-password">
+        <div>
+            Tag : <span id="tag"></span>
+        </div>
+        <div>
+            Type : <span id="type"></span>
+        </div>
+        <div>
+            className : <span id="className"></span>
+        </div>
+        <div>
+            ClassList : <span id="classList"></span>
+        </div>
+        <div>
+            idName : <span id="idName"></span>
+        </div>
+    </div>
+</div><hr>
+
+<div><hr>
+    <input type="radio" class="class-radio" id="id-radio" onclick="getInputTypeRadio()">
+    <div id="form-input-radio">
+        <div>
+            Tag : <span id="tag"></span>
+        </div>
+        <div>
+            Type : <span id="type"></span>
+        </div>
+        <div>
+            className : <span id="className"></span>
+        </div>
+        <div>
+            ClassList : <span id="classList"></span>
+        </div>
+        <div>
+            idName : <span id="idName"></span>
+        </div>
+    </div>
+</div><hr>
+
+<script>
+let getInputTypeButton = () => {
+    const tagName = document.activeElement.tagName;
+    const type = document.activeElement.type;
+    const className = document.activeElement.className;
+    const classList = document.activeElement.classList;
+    const idName = document.activeElement.id;
+    let data = document.querySelector("#form-input-button");
+    data.querySelector("#tag").innerHTML = tagName;
+    data.querySelector("#type").innerHTML = type;
+    data.querySelector("#className").innerHTML = className;
+    data.querySelector("#classList").innerHTML = classList;
+    data.querySelector('#idName').innerHTML = idName;
+}
+
+let getInputTagButton = () => {
+    const tagName = document.activeElement.tagName;
+    const type = document.activeElement.type;
+    const className = document.activeElement.className;
+    const classList = document.activeElement.classList;
+    const idName = document.activeElement.id;
+    let data = document.querySelector("#form-tag-button");
+    data.querySelector("#tag").innerHTML = tagName;
+    data.querySelector("#type").innerHTML = type;
+    data.querySelector("#className").innerHTML = className;
+    data.querySelector("#classList").innerHTML = classList;
+    data.querySelector('#idName').innerHTML = idName;
+}
+
+let getInputTypeText = () => {
+    console.log(document.activeElement.id);
+    console.log(document.activeElement.className);
+    console.log(document.activeElement.classList);
+    const tag = document.activeElement.tagName;
+    const type = document.activeElement.type;
+    const className = document.activeElement.className;
+    const classList = document.activeElement.classList;
+    const idName = document.activeElement.id;
+    let data = document.querySelector("#form-tag-input");
+    data.querySelector("#tag").innerHTML = tag;
+    data.querySelector("#type").innerHTML = type;
+    data.querySelector("#className").innerHTML = className;
+    data.querySelector("#classList").innerHTML = classList;
+    data.querySelector("#idName").innerHTML = idName;
+}
+
+let getInputTypePassword = () => {
+    const tag = document.activeElement.tagName;
+    const type = document.activeElement.type;
+    const className = document.activeElement.className;
+    const classList = document.activeElement.classList;
+    const idName = document.activeElement.id;
+    let data = document.querySelector("#form-input-password");
+    data.querySelector("#tag").innerHTML = tag;
+    data.querySelector("#type").innerHTML = type;
+    data.querySelector("#className").innerHTML = className;
+    data.querySelector("#classList").innerHTML = classList;
+    data.querySelector("#idName").innerHTML = idName;
+}
+
+let getInputTypeRadio = () => {
+    const tag = document.activeElement.tagName;
+    const type = document.activeElement.type;
+    const className = document.activeElement.className;
+    const classList = document.activeElement.classList;
+    const idName = document.activeElement.id;
+    let data = document.querySelectorAll("#form-input-radio")[0];
+    data.querySelector("#tag").innerHTML = tag;
+    data.querySelector("#type").innerHTML = type;
+    data.querySelector("#className").innerHTML = className;
+    data.querySelector("#classList").innerHTML = classList;
+    data.querySelector("#idName").innerHTML = idName;
+}
+
+let container = () => {
+    console.log(document.activeElement.className);
+}
+</script>
+</body>
+</html>

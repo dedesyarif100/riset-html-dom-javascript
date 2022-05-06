@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<style>
+a:focus, a:active {
+    color: red;
+}
+</style>
+<body>
+<h1>The Element Object</h1>
+<h2>The focus() and blur() Methods</h2>
+
+<div><hr>
+    <a id="getExampleOne" href="https://www.w3schools.com">Visit W3Schools.com</a>
+    <p>Click the buttons to give or remove focus from the link above.</p>
+    <input type="button" onclick="getFocus()" value="Get focus">
+    <input type="button" onclick="loseFocus()" value="Lose focus">
+</div><hr>
+
+<div><hr>
+    <input type="text" id="getExampleTwo" value="A text field">
+    <p>Click the buttons to give or remove focus from the text field.</p>
+    <button type="button" onclick="getFocusToInput()">Get focus</button>
+    <button type="button" onclick="loseFocusToInput()">Lose focus</button>
+</div><hr>
+
+<div><hr>
+    <input type="text" id="getExampleThree" value="A text field">
+</div><hr>
+
+<script>
+// Give focus to an element:
+let getFocus = () => {
+    document.getElementById("getExampleOne").focus();
+}
+let loseFocus = () => {
+    document.getElementById("getExampleOne").blur();
+}
+
+// Give focus to a text field:
+let getFocusToInput = () => {   
+    document.getElementById("getExampleTwo").focus();
+}
+let loseFocusToInput = () => {
+    document.getElementById("getExampleTwo").blur();
+}
+
+// Give focus to a text field when the document has been loaded:
+window.onload = () => {
+    document.getElementById("autoFocusWhenLoad").focus();
+}
+</script>
+</body>
+</html>

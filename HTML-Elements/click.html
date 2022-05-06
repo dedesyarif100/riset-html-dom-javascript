@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The click() Method</h2>
+
+<div><hr>
+	<p>Hover over the checkbox to simulate a mouse-click.</p>
+	<button onclick="getExampleOne()">Try it</button>
+	<div id="activeExampleOne"></div>
+	<form>
+		<input type="checkbox" id="getExampleOne">
+	</form>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+	let activeExampleOne = document.querySelector("#activeExampleOne");
+	activeExampleOne.innerHTML = "active";
+	activeExampleOne.style.color = "white";
+	activeExampleOne.style.backgroundColor = "green";
+
+	const attrOnMouseOver = document.createAttribute("onmouseover");
+	attrOnMouseOver.value = "eventExampleOne()";
+	let getExampleOne = document.querySelector("#getExampleOne");
+	getExampleOne.setAttributeNode(attrOnMouseOver);
+}
+
+function eventExampleOne() {
+	document.getElementById("getExampleOne").click();
+}
+</script>
+</body>
+</html>

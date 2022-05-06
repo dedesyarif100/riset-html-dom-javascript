@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The designMode Property</h2>
+
+<div><hr>
+    <p>The designMode property returns if this document is editable:</p>
+    <button onclick="getExampleOne()">Click</button>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let data = document.getElementById("getExampleOne");
+    data.innerHTML = document.designMode;
+    data.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

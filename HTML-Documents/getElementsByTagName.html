@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Document Object</h1>
+<h2>The getElementsByTagName() Method</h2>
+
+<div><hr>
+    <h2>An unordered list:</h2>
+    <ul class="listExampleOne">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <h2>The innerHTML of the second li element is:</h2>
+    <button onclick="getExampleOne()">Click</button>
+    <div>
+        <h3 id="getExampleOne"></h3>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Click</button>
+    <h3 id="getExampleTwo"></h3>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Click</button>
+    <div class="listExampleThree">
+        <p>This is a paragraph.</p>
+        <p>This is a paragraph.</p>
+        <p>This is a paragraph.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Click</button>
+    <h3 id="getExampleFour"></h3>
+</div><hr>
+
+<script>
+// Get all elements with the tag name "li":
+let getExampleOne = () => {
+    const collection = document.getElementsByTagName("li");
+    let getExampleOne = document.getElementById("getExampleOne");
+    getExampleOne.innerHTML = collection[1].innerHTML;
+    getExampleOne.style.backgroundColor = "yellow";
+}
+
+// Get all elements in the document:
+let getExampleTwo = () => {
+    const allElements = document.getElementsByTagName("*");
+    let text = "";
+    for (let i = 0; i < allElements.length; i++) {
+        text += allElements[i].tagName + "<br>";
+    }
+    let getExampleTwo = document.getElementById("getExampleTwo");
+    getExampleTwo.innerHTML = text;
+    getExampleTwo.style.backgroundColor = "yellow";
+}
+
+// Change the inner HTML of the first <p> element in the document:
+let getExampleThree = () => {
+    let getExampleThree = document.querySelectorAll(".listExampleThree")[0].children;
+    getExampleThree[0].innerHTML = "HELLO WORLD";
+    getExampleThree[0].style.backgroundColor = "yellow";
+}
+
+// The number of <li> elements in the document:
+let getExampleFour = () => {
+    let listExampleOne = document.querySelector(".listExampleOne");
+    const lengthTagLi = listExampleOne.getElementsByTagName("li");
+    let getExampleFour = document.getElementById("getExampleFour")
+    getExampleFour.innerHTML = lengthTagLi.length;
+    getExampleFour.style.backgroundColor = "yellow";
+
+    // Change the background color of all <p> elements:
+    let listExampleThree = document.querySelector(".listExampleThree");
+    const allElementsTagP = listExampleThree.getElementsByTagName("P");
+    for (let i = 0; i < allElementsTagP.length; i++) {
+        allElementsTagP[i].style.backgroundColor = "yellow";
+    }
+}
+</script>
+</body>
+</html>

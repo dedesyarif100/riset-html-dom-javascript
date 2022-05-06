@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The normalize() Method</h2>
+
+<div><hr>
+    <button onclick="addTextNode()">Add Text</button>
+    <button onclick="normPara()">Normalize</button>
+    <p id="getExampleOne">Click one buttons to add text to this paragraph, click the other button to normalize the paragraph.</p>
+    <p>The paragraph above has <b><span id="cc">1</span></b> child node(s).</p>
+</div><hr>
+
+<script>
+let addTextNode = () => {
+    const node = document.createTextNode(" Click again.");
+    const element = document.querySelector("#getExampleOne");
+    element.appendChild(node);
+    countNodes(element);
+}
+
+let normPara = () => {
+    const element = document.querySelector("#getExampleOne");
+    element.normalize();
+    countNodes(element);
+}
+
+function countNodes(element) {
+    const span = document.getElementById("cc");
+    span.innerHTML = element.childNodes.length;
+    span.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

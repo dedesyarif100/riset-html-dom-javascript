@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#listExampleOne {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+a[target] {
+    background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<div><hr>
+    <button onclick="getExampleOne()">Try it</button>
+    <p>Click the button to add a background color to the first element in DIV with class="example" (index 0).</p>
+    <div id="listExampleOne">
+        <h2 class="example">A heading with class="example" in div</h2>
+        <p class="example">A paragraph with class="example" in div.</p> 
+    </div>
+    <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleTwo()">Try it</button>
+    <p>Click the button to add a background color to the first element in DIV with class="example" (index 0).</p>
+    <div id="listExampleTwo">
+        <p>This is a p element in div.</p>
+        <p>This is also a p element in div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleThree()">Try it</button>
+    <p>Click the button to add a background color to the first element in DIV with class="example" (index 0).</p>
+    <div id="listExampleThree">
+        <h2 class="example">A heading with class="example" in div</h2>
+        <p class="example">A paragraph with class="example" in div.</p>
+        <p class="example">Another paragraph with class="example" in div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFour()">Try it</button>
+    <p>Click the button to add a background color to the first element in DIV with class="example" (index 0).</p>
+    <div id="listExampleFour">
+        <h2 class="example">A heading with class="example" in div</h2>
+        <p class="example">A paragraph with class="example" in div.</p>
+        <p class="example">Another paragraph with class="example" in div.</p>
+    </div>
+    <p id="getExampleFour"></p>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleFive()">Try it</button>
+    <p>Click the button to add a background color to all elements with class="example" inside DIV.</p>
+    <div id="listExampleFive">
+        <h2 class="example">A heading with class="example" in div</h2>
+        <p class="example">A p element with class="example" in a div.</p>
+        <p class="example">Another p element with class="example" in a div.</p>
+        <p>A p element in div with a <span class="example">span element with class="example"</span> inside of it.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleSix()">Try it</button>
+    <p>Click the button to add a background color to all p elements inside DIV.</p>
+    <div id="listExampleSix">
+        <h2>A heading in div</h2>
+        <p>A p element in div.</p>
+        <p>Another p element in div.</p>
+        <p>A p element with class="example" in div.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleSeven()">Try it</button>
+    <p>Click the button to add a red border to all links in DIV that have a target attribute.</p>
+    <p>The CSS selector a[target] makes sure that all links with a target attribute gets a yellow background:</p>
+    <div id="listExampleSeven">
+        <a href="https://www.w3schools.com">w3schools.com</a>
+        <a href="http://www.disney.com" target="_blank">disney.com</a>
+        <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+    </div>
+</div><hr>
+
+<div><hr>
+    <button onclick="getExampleEight()">Try it</button>
+    <div id="listExampleEight">
+        <p>Set the background color of all h3, div and span elements:</p>
+        <h1>A H1 element</h1>
+        <h2>A H2 element</h2>
+        <h3>A H2 element</h3>
+        <div>A DIV element</div>
+        <p>A p element.</p>
+        <p>A p element with a <span style="color:brown;">span</span> element inside.</p>
+    </div>
+</div><hr>
+
+<script>
+// Set the background color of the first element with class="example" inside of a <div> element:
+let getExampleOne = () => {
+    var x = document.querySelector("#listExampleOne").querySelectorAll(".example");
+    x[0].style.backgroundColor = "red";
+}
+
+// Get all <p> elements inside a <div> element, and set the background color of the first <p> element (index 0):
+let getExampleTwo = () => {
+    var x = document.querySelector("#listExampleTwo").querySelectorAll("p");
+    x[0].style.backgroundColor = "red";
+}
+
+// Get all <p> elements in a <div> with class="example", and set the background of the first <p> element:
+let getExampleThree = () => {
+    var x = document.querySelector("#listExampleThree").querySelectorAll("p.example");
+    x[0].style.backgroundColor = "red";
+}
+
+// Find out how many elements with class="example" there are in a <div> element (using the length property of the NodeList object):
+let getExampleFour = () => {
+    var x = document.querySelector("#listExampleFour").querySelectorAll(".example");
+    let data = document.querySelector("#getExampleFour");
+    data.innerHTML = x.length;
+    data.style.backgroundColor = "yellow";
+}
+
+// Set the background color of all elements with class="example" in a <div> element:
+let getExampleFive = () => {
+    let x = document.querySelector("#listExampleFive").querySelectorAll(".example");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.backgroundColor = "yellow";
+    }
+}
+
+// Set the background color of all <p> elements in a <div> element:
+let getExampleSix = () => {
+    let x = document.querySelector("#listExampleSix").querySelectorAll("p");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.backgroundColor = "yellow";
+    }
+}
+
+// Set the border style of all <a> elements in a <div> element that have a "target" attribute:
+let getExampleSeven = () => {
+    let x = document.querySelector("#listExampleSeven").querySelectorAll("a[target]");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.border = "2px solid red";
+    }
+}
+
+// Set the background color of all <h2>, <div> and <span> elements in a <div> element:
+let getExampleEight = () => {
+    let nodeList = document.querySelector("#listExampleEight").querySelectorAll("h3, div, span");
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.backgroundColor = "yellow";
+    }
+}
+</script>
+</body>
+</html>

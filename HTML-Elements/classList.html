@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<style>
+.myStyle {
+    background-color: coral;
+    padding: 16px;
+}
+.anotherClass {
+    text-align: center;
+    font-size: 25px;
+}
+.thirdClass {
+    text-transform: uppercase;
+}
+</style>
+<body>
+<h1>The DOMToken Object</h1>
+
+<div><hr>
+    <h2>The add() Method</h2>
+    <button onclick="getExampleOne()">Add</button>
+    <p>Click "Add" to add the "myStyle" class to myDIV.</p>
+    <div id="getExampleOne">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The remove() Method</h2>
+    <button onclick="getExampleTwo()">Remove</button>
+    <p>Click "Remove" to Remove the "myStyle" class to myDIV.</p>
+    <div id="getExampleTwo" class="myStyle">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The toggle() Method</h2>
+    <button onclick="getExampleThree()">toggle</button>
+    <p>Click "toggle" to toggle the "myStyle" class to myDIV.</p>
+    <div id="getExampleThree">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The addOneMoreClass() Method</h2>
+    <button onclick="getExampleFour()">addOneMoreClass</button>
+    <p>Click "addOneMoreClass" to addOneMoreClass the "myStyle, anotherClass, thirdClass" class to myDIV.</p>
+    <div id="getExampleFour">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The removeOneMoreClass() Method</h2>
+    <button onclick="getExampleFive()">removeOneMoreClass</button>
+    <p>Click "removeOneMoreClass" to removeOneMoreClass the "myStyle, anotherClass, thirdClass" class to myDIV.</p>
+    <div id="getExampleFive" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The removeOneMoreClass() Method</h2>
+    <button onclick="getExampleSix()">Toogle</button>
+    <p>Click "removeOneMoreClass" to removeOneMoreClass the "myStyle, anotherClass, thirdClass" class to myDIV.</p>
+    <div id="getExampleSix">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<div><hr>
+    <h2>The length Property</h2>
+    <button onclick="getExampleSeven()">getExampleSeven</button>
+    <div id="classExampleSeven" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+    Count Value : <span id="getExampleSeven"></span>
+</div><hr>
+
+<div><hr>
+    <h2>The classList Property</h2>
+    <button onclick="getExampleEight()">getExampleEight</button>
+    <div id="classExampleEight" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+    Classlist Value : <span id="getExampleEight"></span>
+</div><hr>
+
+<div><hr>
+    <h2>The item() Method</h2>
+    <button onclick="getExampleNine()">getExampleNine</button>
+    <div id="classExampleNine" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+    Classlist Value : <span id="getExampleNine"></span>
+</div><hr>
+
+<div><hr>
+    <h2>The contains() Method</h2>
+    <button onclick="getExampleTen()">getExampleTen</button>
+    <div id="classExampleTen" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+    Contains Value : <span id="getExampleTen"></span>
+</div><hr>
+
+<div><hr>
+    <h2>The contains() and remove() Methods</h2>
+    <button onclick="removeContainsClass()">Remove</button>
+    <div id="removeContainsClass" class="myStyle anotherClass thirdClass">
+        <p>I am a myDIV.</p>
+    </div>
+</div><hr>
+
+<script>
+// Add a "myStyle" class to an element:
+let getExampleOne = () => {
+    document.getElementById("getExampleOne").classList.add("myStyle");
+}
+
+// Remove the "myStyle" class from an element:
+let getExampleTwo = () => {
+    document.getElementById("getExampleTwo").classList.remove("myStyle");
+}
+
+// Toggle "myStyle" on and off:
+let getExampleThree = () => {
+    document.getElementById("getExampleThree").classList.toggle("myStyle");
+}
+
+// Add multiple classes to the an element:
+let getExampleFour = () => {
+    document.getElementById("getExampleFour").classList.add("myStyle", "anotherClass", "thirdClass");
+}
+
+// Remove multiple classes from an element:
+let getExampleFive = () => {
+    document.getElementById("getExampleFive").classList.remove("myStyle", "anotherClass", "thirdClass");
+}
+
+let getExampleSix = () => {
+    let getExampleSix = document.getElementById("getExampleSix");
+    getExampleSix.classList.toggle("myStyle");
+    getExampleSix.classList.toggle("anotherClass");
+    getExampleSix.classList.toggle("thirdClass");
+}
+
+// How many class names the element have:
+let getExampleSeven = () => {
+    let numb = document.getElementById("classExampleSeven").classList.length;
+    let getExampleSeven = document.getElementById("getExampleSeven");
+    getExampleSeven.innerHTML = numb;
+    getExampleSeven.style.backgroundColor = "yellow";
+}
+
+// Get the class names of the "myDIV" element:
+let getExampleEight = () => {
+    let list = document.getElementById("classExampleEight").classList;
+    let getExampleEight = document.getElementById("getExampleEight");
+    getExampleEight.innerHTML = list;
+    getExampleEight.style.backgroundColor = "yellow";
+}
+
+// Get the first class of an element:
+let getExampleNine = () => {
+    let className = document.getElementById("classExampleNine").classList.item(0);
+    let getExampleNine = document.getElementById("getExampleNine");
+    getExampleNine.innerHTML = className;
+    getExampleNine.style.backgroundColor = "yellow";
+}
+
+// Does an an element has a "myStyle" class?
+let getExampleTen = () => {
+    let contains = document.getElementById("classExampleTen").classList.contains("myStyle");
+    let getExampleTen = document.getElementById("getExampleTen");
+    getExampleTen.innerHTML = contains;
+    getExampleTen.style.backgroundColor = "yellow";
+}
+
+// Remove "anotherClass" if an element has a "myStyle" class.
+let removeContainsClass = () => {
+    const element = document.getElementById("removeContainsClass");
+    if (element.classList.contains("myStyle", "thirdClass", "anotherClass")) {
+        element.classList.remove("myStyle", "thirdClass", "anotherClass");
+    }
+}
+
+// Toggle between classes to create a dropdown button:
+
+// Create a sticky navigation bar:
+</script>
+</body>
+</html>

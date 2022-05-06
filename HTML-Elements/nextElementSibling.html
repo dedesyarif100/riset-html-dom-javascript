@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The nextElementSibling Property</h2>
+
+<div><hr>
+    <button onclick="getExampleOne()">Click</button>
+    <p>The HTML content of the next sibling of the first list item has the text:</p>
+    <ul>
+        <li id="item1">Coffee (first item)</li>
+        <li id="item2">Tea (second item)</li>
+        <li id="item3">Pizza (Third item)</li>
+        <li id="item4">Rice (Four item)</li>
+    </ul>
+    <p id="getExampleOne"></p>
+</div><hr>
+
+<script>
+let getExampleOne = () => {
+    let text = document.querySelector("#item4").nextElementSibling;
+    let data = document.querySelector("#getExampleOne");
+    data.style.backgroundColor = "yellow";
+    if (text !== null) {
+        text = text.innerHTML;
+        data.innerHTML = text;
+    } else {
+        data.innerHTML = "DATA NULL";
+    }
+}
+</script>
+</body>
+</html>
